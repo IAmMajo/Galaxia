@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:streamflix/models/highlight_model.dart';
 import 'package:streamflix/models/meineListe_model.dart';
 import 'package:streamflix/models/neuheiten_model.dart';
+import 'package:streamflix/models/tagcloud_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,11 +16,13 @@ class _HomePageState extends State<HomePage> {
   List<NeuheitenModel> neuheiten = [];
   List<HighlightModel> highlight = [];
   List<MeineListeModel> meineListe = [];
+  List<TagCloudModel> tagcloud = [];
 
   void getInitialInfo() {
     neuheiten = NeuheitenModel.getneuheiten();
     highlight = HighlightModel.getHighlight();
     meineListe = MeineListeModel.getmeineListe();
+    tagcloud = TagCloudModel.getTagcloud();
   }
 
   @override
@@ -41,8 +44,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 appBar(),
                 _dailyHighlight(),
+                _TagCloud(),
                 const SizedBox(
-                  height: 40,
+                  height: 10,
                 ),
                 _neuheiten(),
                 const SizedBox(
@@ -55,6 +59,35 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  SizedBox _TagCloud() {
+    return SizedBox(
+        height: 30,
+        child: Center(
+          child: ListView.separated(
+            itemCount: tagcloud.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            separatorBuilder: (context, index) => const SizedBox(
+              width: 10,
+            ),
+            itemBuilder: (context, index) {
+              return Container(
+                width: 100, 
+                decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(8.0)
+                ),
+                 
+                child: Center(
+                  child: Text(tagcloud[index].name),
+                  ),
+              );
+            },
+          ),
+        ),
+      );
   }
 
   Column _meineListe() {
@@ -229,7 +262,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text('▶ Streamen',
+                      child: const Text('▶ Streamen',
                       style: TextStyle(
                         color: Colors.white
                        ),
@@ -249,7 +282,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text('+ Liste hinzufügen',
+                      child: const Text('+ Liste hinzufügen',
                       style: TextStyle(
                         color: Colors.white
                        ),
@@ -257,7 +290,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),
