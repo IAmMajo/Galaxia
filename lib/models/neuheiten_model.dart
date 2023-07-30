@@ -19,7 +19,7 @@ class NeuheitenModel {
           name: 'Good Doctor',
           genre: 'Commedy',
           image: "series/GoodDoctor.jpg",
-          platform: "N"),
+          platform: "Netflix"),
     );
 
     neuheiten.add(
@@ -27,7 +27,7 @@ class NeuheitenModel {
           name: 'Arcane',
           genre: 'League of Legends',
           image: "series/Arcane.jpg",
-          platform: "N"),
+          platform: "Netflix"),
     );
 
     neuheiten.add(
@@ -35,7 +35,22 @@ class NeuheitenModel {
           name: 'The 100',
           genre: 'Dystopian',
           image: "series/The100.jpg",
-          platform: "P"),
+          platform: "Prime"),
+    );
+
+     neuheiten.add(
+      NeuheitenModel(
+          name: 'The Walking Dead',
+          genre: 'Survival',
+          image: "series/TheWalkingDead.png",
+          platform: "Netflix"),
+    );
+     neuheiten.add(
+      NeuheitenModel(
+          name: 'Mrs Marvel',
+          genre: 'Marvel',
+          image: "series/MrsMarvel.webp",
+          platform: "Disney"),
     );
 
     return neuheiten;
