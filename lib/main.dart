@@ -74,7 +74,7 @@ class _NavigationState extends State<Navigation> {
       body: <Widget>[
         const SearchPage(),
         const SoonPage(),
-        HomePage(),
+        const HomePage(),
         const ListsPage(),
         const SettingsPage(),
       ][currentPageIndex],
@@ -83,32 +83,31 @@ class _NavigationState extends State<Navigation> {
 
   List<Widget> get navbar {
     return const <Widget>[
-
-        NavigationDestination(
-          selectedIcon: Icon(MaterialSymbols.search, grade: 200),
-          icon: Icon(MaterialSymbols.search),
-          label: 'Suche',
-        ),
-        NavigationDestination(
-          selectedIcon: Icon(MaterialSymbols.schedule, grade: 200, fill: 1),
-          icon: Icon(MaterialSymbols.schedule),
-          label: 'Bald',
-        ),
-        NavigationDestination(
-          selectedIcon: Icon(MaterialSymbols.home, grade: 200, fill: 1),
-          icon: Icon(MaterialSymbols.home),
-          label: 'Home',
-        ),
-        NavigationDestination(
-          selectedIcon: Icon(MaterialSymbols.list, grade: 200),
-          icon: Icon(MaterialSymbols.list),
-          label: 'Listen',
-        ),
-        NavigationDestination(
-          selectedIcon: Icon(MaterialSymbols.settings, grade: 200, fill: 1),
-          icon: Icon(MaterialSymbols.settings),
-          label: 'Optionen',
-        ),
-      ];
+      NavigationDestination(
+        selectedIcon: Icon(MaterialSymbols.search, grade: 200),
+        icon: Icon(MaterialSymbols.search),
+        label: 'Suche',
+      ),
+      NavigationDestination(
+        selectedIcon: Icon(MaterialSymbols.schedule, grade: 200, fill: 1),
+        icon: Icon(MaterialSymbols.schedule),
+        label: 'Bald',
+      ),
+      NavigationDestination(
+        selectedIcon: Icon(MaterialSymbols.home, grade: 200, fill: 1),
+        icon: Icon(MaterialSymbols.home),
+        label: 'Home',
+      ),
+      NavigationDestination(
+        selectedIcon: Icon(MaterialSymbols.list, grade: 200),
+        icon: Icon(MaterialSymbols.list),
+        label: 'Listen',
+      ),
+      NavigationDestination(
+        selectedIcon: Icon(MaterialSymbols.settings, grade: 200, fill: 1),
+        icon: Icon(MaterialSymbols.settings),
+        label: 'Optionen',
+      ),
+    ];
   }
 }

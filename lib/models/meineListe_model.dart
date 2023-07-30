@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-class MeineListeModel{
+class MeineListeModel {
   String name;
   String genre;
   String image;
@@ -13,35 +11,31 @@ class MeineListeModel{
     required this.platform,
   });
 
-  static List < MeineListeModel > getmeineListe(){
-    List < MeineListeModel > meineListe = [];
-    
-    meineListe.add(
-      MeineListeModel(
-      name: 'Spider-Man',
-      genre: 'MARVEL',
-      image: "SpiderManNoWayHome.jpg",
-      platform: "N"
-      ),
-    );
-
+  static List<MeineListeModel> getmeineListe() {
+    List<MeineListeModel> meineListe = [];
 
     meineListe.add(
       MeineListeModel(
-      name: 'Game of Thrones',
-      genre: 'Mittelalter',
-      image: "series/GameofThrones.jpg",
-      platform: "WOW"
-      ),
+          name: 'Spider-Man',
+          genre: 'MARVEL',
+          image: "SpiderManNoWayHome.jpg",
+          platform: "N"),
     );
 
     meineListe.add(
       MeineListeModel(
-      name: 'König der Löwen',
-      genre: 'Disney',
-      image: "TheLionKingRemake.jpg",
-      platform: "D"
-      ),
+          name: 'Game of Thrones',
+          genre: 'Mittelalter',
+          image: "series/GameofThrones.jpg",
+          platform: "WOW"),
+    );
+
+    meineListe.add(
+      MeineListeModel(
+          name: 'König der Löwen',
+          genre: 'Disney',
+          image: "TheLionKingRemake.jpg",
+          platform: "D"),
     );
 
     return meineListe;

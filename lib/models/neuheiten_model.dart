@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-class NeuheitenModel{
+class NeuheitenModel {
   String name;
   String genre;
   String image;
@@ -13,35 +11,31 @@ class NeuheitenModel{
     required this.platform,
   });
 
-  static List < NeuheitenModel > getneuheiten(){
-    List < NeuheitenModel > neuheiten = [];
-    
-    neuheiten.add(
-      NeuheitenModel(
-      name: 'Good Doctor',
-      genre: 'Commedy',
-      image: "series/GoodDoctor.jpg",
-      platform: "N"
-      ),
-    );
-
+  static List<NeuheitenModel> getneuheiten() {
+    List<NeuheitenModel> neuheiten = [];
 
     neuheiten.add(
       NeuheitenModel(
-      name: 'Arcane',
-      genre: 'League of Legends',
-      image: "series/Arcane.jpg",
-      platform: "N"
-      ),
+          name: 'Good Doctor',
+          genre: 'Commedy',
+          image: "series/GoodDoctor.jpg",
+          platform: "N"),
     );
 
     neuheiten.add(
       NeuheitenModel(
-      name: 'The 100',
-      genre: 'Dystopian',
-      image: "series/The100.jpg",
-      platform: "P"
-      ),
+          name: 'Arcane',
+          genre: 'League of Legends',
+          image: "series/Arcane.jpg",
+          platform: "N"),
+    );
+
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'The 100',
+          genre: 'Dystopian',
+          image: "series/The100.jpg",
+          platform: "P"),
     );
 
     return neuheiten;
