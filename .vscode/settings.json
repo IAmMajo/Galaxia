@@ -2,13 +2,16 @@
   "files.encoding": "utf8",
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "files.trimTrailingWhitespace": false,
   "files.eol": "\n",
   "files.insertFinalNewline": false,
   "files.trimFinalNewlines": false,
   "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
   "redhat.telemetry.enabled": false,
+  "gitlens.telemetry.enabled": false
 }

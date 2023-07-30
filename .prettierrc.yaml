@@ -1,0 +1,4 @@
+overrides:
+  - files: .metadata
+    options:
+      parser: yaml

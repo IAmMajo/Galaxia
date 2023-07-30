@@ -1,0 +1,32 @@
+{
+  "name": "@iammajo/streamflix",
+  "version": "1.0.0",
+  "description": "Ein Dashboard für alle Streamingdienste.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IAmMajo/Streamflix.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IAmMajo/Streamflix/issues"
+  },
+  "homepage": "https://github.com/IAmMajo/Streamflix#readme",
+  "volta": {
+    "node": "18.16.0",
+    "npm": "9.6.5"
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "2.2.0",
+    "prettier": "2.8.7",
+    "prettier-plugin-java": "2.1.0",
+    "wrangler": "^2.16.0"
+  }
+}

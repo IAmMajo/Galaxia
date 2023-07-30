@@ -4,6 +4,7 @@
     "dart-code.dart-code",
     "editorconfig.editorconfig",
     "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode",
     "github.vscode-pull-request-github",
     "eamodio.gitlens"
   ]
