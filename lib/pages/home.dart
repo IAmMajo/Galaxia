@@ -1,51 +1,264 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:streamflix/components/element.dart';
+import 'package:streamflix/models/highlight_model.dart';
+import 'package:streamflix/models/meineListe_model.dart';
+import 'package:streamflix/models/neuheiten_model.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<NeuheitenModel> neuheiten = [];
+  List<HighlightModel> highlight = [];
+  List<MeineListeModel> meineListe = [];
+
+  void getInitialInfo() {
+    neuheiten = NeuheitenModel.getneuheiten();
+    highlight = HighlightModel.getHighlight();
+    meineListe = MeineListeModel.getmeineListe();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(8),
-      children: [
-        Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            AspectRatio(
-              aspectRatio: 16 / 9,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.network(
-                  'https://fastly.picsum.photos/id/686/536/354.jpg?hmac=nQKjRmIoZtUkWvI-wNF8RFNW89VHuPIPT2muuPPL3QY',
-                  fit: BoxFit.cover,
+    getInitialInfo();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage(highlight[0].image),
+          fit: BoxFit.cover,
+        )),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: Container(
+            color: Colors.black.withOpacity(0.7),
+            child: ListView(
+              children: [
+                appBar(),
+                _dailyHighlight(),
+                const SizedBox(
+                  height: 40,
                 ),
-              ),
-            ),
-            Transform.translate(
-              offset: const Offset(0, 35),
-              child: FractionallySizedBox(
-                widthFactor: 0.6,
-                child: Image.network(
-                  'https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/4b0377e83a92d96fdd2fe5e8f6dafa4aebdc3d433d6487d9f86edd83931127d9._SX900_FMpng_.png',
+                _neuheiten(),
+                const SizedBox(
+                  height: 40,
                 ),
-              ),
+                _meineListe(),
+              ],
             ),
-          ],
-        ),
-        Container(
-          margin: const EdgeInsets.only(top: 50),
-          child: Text(
-            'Vorschläge',
-            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
-        Row(
-          children: const [
-            ContentElement(
-              'https://fastly.picsum.photos/id/686/536/354.jpg?hmac=nQKjRmIoZtUkWvI-wNF8RFNW89VHuPIPT2muuPPL3QY',
+      ),
+    );
+  }
+
+  Column _meineListe() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            'Meine Liste',
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            itemCount: meineListe.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => const SizedBox(
+              width: 25,
             ),
-          ],
+            itemBuilder: (context, index) {
+              return Container(
+                width: 110,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(meineListe[index].image),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      meineListe[index].name,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14),
+                    ),
+                    Text(
+                      meineListe[index].genre,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 12),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        )
+      ],
+    );
+  }
+
+  Column _neuheiten() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Text(
+            'Neuheiten',
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            itemCount: neuheiten.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => const SizedBox(
+              width: 25,
+            ),
+            itemBuilder: (context, index) {
+              return Container(
+                width: 110,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(neuheiten[index].image),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      neuheiten[index].name,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14),
+                    ),
+                    Text(
+                      neuheiten[index].genre,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w300,
+                          fontSize: 12),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        )
+      ],
+    );
+  }
+
+  Container _dailyHighlight() {
+    return Container(
+      margin: const EdgeInsets.all(10),
+      alignment: Alignment.center,
+      height: 300,
+      child: Container(
+        height: 300,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          image: DecorationImage(
+            image: AssetImage(highlight[0].image),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                highlight[0].name,
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 18),
+              ),
+              Text(
+                highlight[0].genre,
+                style: const TextStyle(
+                  color: Colors.grey,
+                  fontSize: 13,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  AppBar appBar() {
+    return AppBar(
+      title: const Text(
+        'Home',
+        style: TextStyle(
+            color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+      ),
+      backgroundColor: Colors.transparent,
+      elevation: 0.0,
+      centerTitle: true,
+      leading: GestureDetector(
+        onTap: () {},
+        child: Container(
+          margin: const EdgeInsets.all(10),
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: const Color(0xffF7F8F8),
+              borderRadius: BorderRadius.circular(10)),
+          child: Image.asset(
+            "HamburgerImage.png",
+            height: 20,
+            width: 20,
+          ),
+        ),
+      ),
+      actions: [
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            margin: const EdgeInsets.all(10),
+            width: 50,
+            height: 50,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage("PB.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ),
       ],
     );
