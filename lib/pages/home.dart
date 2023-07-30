@@ -63,31 +63,29 @@ class _HomePageState extends State<HomePage> {
 
   SizedBox _TagCloud() {
     return SizedBox(
-        height: 30,
-        child: Center(
-          child: ListView.separated(
-            itemCount: tagcloud.length,
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.only(left: 10, right: 10),
-            separatorBuilder: (context, index) => const SizedBox(
-              width: 10,
-            ),
-            itemBuilder: (context, index) {
-              return Container(
-                width: 100, 
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(8.0)
-                ),
-                 
-                child: Center(
-                  child: Text(tagcloud[index].name),
-                  ),
-              );
-            },
+      height: 30,
+      child: Center(
+        child: ListView.separated(
+          itemCount: tagcloud.length,
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.only(left: 10, right: 10),
+          separatorBuilder: (context, index) => const SizedBox(
+            width: 10,
           ),
+          itemBuilder: (context, index) {
+            return Container(
+              width: 100,
+              decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(8.0)),
+              child: Center(
+                child: Text(tagcloud[index].name),
+              ),
+            );
+          },
         ),
-      );
+      ),
+    );
   }
 
 Column _meineListe() {
@@ -298,11 +296,10 @@ Column _neuheiten() {
                         ),
                       ),
                       onPressed: () {},
-                      child: const Text('▶ Streamen',
-                      style: TextStyle(
-                        color: Colors.white
-                       ),
-                     ),
+                      child: const Text(
+                        '▶ Streamen',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   Padding(
@@ -321,11 +318,10 @@ Column _neuheiten() {
                         ),
                       ),
                       onPressed: () {},
-                      child: const Text('+ Liste hinzufügen',
-                      style: TextStyle(
-                        color: Colors.white
-                       ),
-                     ),
+                      child: const Text(
+                        '+ Liste hinzufügen',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ],
