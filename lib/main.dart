@@ -29,6 +29,7 @@ class StreamflixApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: const Navigation(),
       theme: ThemeData(
         colorScheme: lightColorScheme,
@@ -55,7 +56,7 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-  int currentPageIndex = 0;
+  int currentPageIndex = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -67,42 +68,47 @@ class _NavigationState extends State<Navigation> {
           });
         },
         selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            selectedIcon: Icon(MaterialSymbols.home, grade: 200, fill: 1),
-            icon: Icon(MaterialSymbols.home),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(MaterialSymbols.search, grade: 200),
-            icon: Icon(MaterialSymbols.search),
-            label: 'Suche',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(MaterialSymbols.schedule, grade: 200, fill: 1),
-            icon: Icon(MaterialSymbols.schedule),
-            label: 'Bald',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(MaterialSymbols.list, grade: 200),
-            icon: Icon(MaterialSymbols.list),
-            label: 'Listen',
-          ),
-          NavigationDestination(
-            selectedIcon: Icon(MaterialSymbols.settings, grade: 200, fill: 1),
-            icon: Icon(MaterialSymbols.settings),
-            label: 'Optionen',
-          ),
-        ],
+        destinations: navbar,
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       ),
-      body: const <Widget>[
+      body: <Widget>[
+        const SearchPage(),
+        const SoonPage(),
         HomePage(),
-        SearchPage(),
-        SoonPage(),
-        ListsPage(),
-        SettingsPage(),
+        const ListsPage(),
+        const SettingsPage(),
       ][currentPageIndex],
     );
+  }
+
+  List<Widget> get navbar {
+    return const <Widget>[
+
+        NavigationDestination(
+          selectedIcon: Icon(MaterialSymbols.search, grade: 200),
+          icon: Icon(MaterialSymbols.search),
+          label: 'Suche',
+        ),
+        NavigationDestination(
+          selectedIcon: Icon(MaterialSymbols.schedule, grade: 200, fill: 1),
+          icon: Icon(MaterialSymbols.schedule),
+          label: 'Bald',
+        ),
+        NavigationDestination(
+          selectedIcon: Icon(MaterialSymbols.home, grade: 200, fill: 1),
+          icon: Icon(MaterialSymbols.home),
+          label: 'Home',
+        ),
+        NavigationDestination(
+          selectedIcon: Icon(MaterialSymbols.list, grade: 200),
+          icon: Icon(MaterialSymbols.list),
+          label: 'Listen',
+        ),
+        NavigationDestination(
+          selectedIcon: Icon(MaterialSymbols.settings, grade: 200, fill: 1),
+          icon: Icon(MaterialSymbols.settings),
+          label: 'Optionen',
+        ),
+      ];
   }
 }
