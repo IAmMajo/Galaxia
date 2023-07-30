@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 18),
+                    fontSize: 20),
               ),
               Text(
                 highlight[0].genre,
