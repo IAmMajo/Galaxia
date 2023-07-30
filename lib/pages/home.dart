@@ -53,6 +53,16 @@ class _HomePageState extends State<HomePage> {
                   height: 40,
                 ),
                 _meineListe(),
+                const SizedBox(
+                  height: 20,),
+                _disney(),  
+                const SizedBox(
+                  height: 20,),
+                _netflix(),
+                const SizedBox(
+                  height: 20,
+                )
+
               ],
             ),
           ),
@@ -241,7 +251,158 @@ Column _neuheiten() {
     ],
   );
 }
+Column _disney() {
+  final disneyNeuheiten = neuheiten.where((item) => item.platform == "Disney").toList();
 
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: Row(
+          children: [
+            Text(
+              'Disney +',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(width: 6),
+            Expanded(
+              flex: 1,
+              child: Divider(
+                color: Colors.white,
+                thickness: 1,
+              ),
+            ),
+            SizedBox(width: 10),
+          ],
+        ),
+      ),
+      const SizedBox(height: 15),
+      SizedBox(
+        height: 150,
+        child: ListView.separated( 
+          itemCount: disneyNeuheiten.length,
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          separatorBuilder: (context, index) => const SizedBox(width: 20), 
+          itemBuilder: (context, index) {
+            return Container(
+              width: 110,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(disneyNeuheiten[index].image),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    disneyNeuheiten[index].name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Text(
+                    disneyNeuheiten[index].genre,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    ],
+  );
+}
+Column _netflix() {
+  final netflixNeuheiten = neuheiten.where((item) => item.platform == "Netflix").toList();
+
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Padding(
+        padding: EdgeInsets.only(left: 20),
+        child: Row(
+          children: [
+            Text(
+              'Netflix',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(width: 6),
+            Expanded(
+              flex: 1,
+              child: Divider(
+                color: Colors.white,
+                thickness: 1,
+              ),
+            ),
+            SizedBox(width: 10),
+          ],
+        ),
+      ),
+      const SizedBox(height: 15),
+      SizedBox(
+        height: 150,
+        child: ListView.separated( 
+          itemCount: netflixNeuheiten.length,
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          separatorBuilder: (context, index) => const SizedBox(width: 20), 
+          itemBuilder: (context, index) {
+            return Container(
+              width: 110,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(netflixNeuheiten[index].image),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    netflixNeuheiten[index].name,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Text(
+                    netflixNeuheiten[index].genre,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    ],
+  );
+}
   Container _dailyHighlight() {
     return Container(
       margin: const EdgeInsets.all(10),
