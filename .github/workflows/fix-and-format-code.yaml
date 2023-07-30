@@ -3,6 +3,9 @@ on:
     branches:
       - main
 name: Fix and format code
+concurrency:
+  group: fix-and-format-code
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
@@ -10,8 +13,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3.5.2
-        with:
-          ref: ${{ github.head_ref }}
       - uses: volta-cli/action@v4.0.0
       - run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
