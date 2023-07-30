@@ -215,45 +215,48 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 3),
                     child: TextButton(
-                        style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.black.withOpacity(0.5)),
-                        overlayColor: MaterialStateProperty.all<Color>(Colors.white.withOpacity(0.1)),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.black.withOpacity(0.5)),
+                        overlayColor: MaterialStateProperty.all<Color>(
+                            Colors.white.withOpacity(0.1)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(8.0),
-                           ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                         ),
                       ),
                       onPressed: () {},
-                      child: Text('▶ Streamen',
-                      style: TextStyle(
-                        color: Colors.white
-                       ),
-                     ),
+                      child: const Text(
+                        '▶ Streamen',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 3),
                     child: TextButton(
-                        style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(Colors.black.withOpacity(0.5)),
-                        overlayColor: MaterialStateProperty.all<Color>(Colors.white.withOpacity(0.1)),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.black.withOpacity(0.5)),
+                        overlayColor: MaterialStateProperty.all<Color>(
+                            Colors.white.withOpacity(0.1)),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
-                           borderRadius: BorderRadius.circular(8.0),
-                           ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
                         ),
                       ),
                       onPressed: () {},
-                      child: Text('+ Liste hinzufügen',
-                      style: TextStyle(
-                        color: Colors.white
-                       ),
-                     ),
+                      child: const Text(
+                        '+ Liste hinzufügen',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 ],
