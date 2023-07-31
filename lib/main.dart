@@ -1,8 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:material_symbols_icons/outlined.dart';
-
+import 'package:streamflix/models/highlight_model.dart';
 import 'color_schemes.g.dart';
 import 'pages/home.dart';
 import 'pages/lists.dart';
@@ -26,7 +28,10 @@ class StreamflixApp extends StatelessWidget {
 
   const StreamflixApp({super.key});
 
+  
+
   @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -50,16 +55,21 @@ class StreamflixApp extends StatelessWidget {
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
-
   @override
   State<Navigation> createState() => _NavigationState();
 }
 
 class _NavigationState extends State<Navigation> {
+
   int currentPageIndex = 2;
+  List<HighlightModel> highlight = [];
+  void getHighlightForDisplay(){
+    highlight = HighlightModel.getHighlight();
+  }
 
   @override
   Widget build(BuildContext context) {
+    getHighlightForDisplay();
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -71,13 +81,28 @@ class _NavigationState extends State<Navigation> {
         destinations: navbar,
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       ),
-      body: <Widget>[
-        const SearchPage(),
-        const SoonPage(),
-        const HomePage(),
-        const ListsPage(),
-        const SettingsPage(),
-      ][currentPageIndex],
+      body: Container(
+        // Fügen Sie die BackdropFilter-Funktion hier ein, um den geblurten Hintergrund für den gesamten Body hinzuzufügen
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(highlight[0].image),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+          child: Container(
+            color: Colors.black.withOpacity(0.7),
+            child: <Widget>[
+              const SearchPage(),
+              const SoonPage(),
+              const HomePage(),
+              const ListsPage(),
+              const SettingsPage(),
+            ][currentPageIndex],
+          ),
+        ),
+      ),
     );
   }
 
