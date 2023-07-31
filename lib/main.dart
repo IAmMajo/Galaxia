@@ -67,18 +67,32 @@ class _NavigationState extends State<Navigation> {
   Widget build(BuildContext context) {
     getHighlightForDisplay();
     return Scaffold(
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        selectedIndex: currentPageIndex,
-        destinations: navbar,
-        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.7),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left:10.0, right: 10.0, bottom: 10.0),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Color.fromARGB(255, 33, 33, 33).withOpacity(0.4),
+            ),
+            child: NavigationBar(
+              //Hier borderRadius unterbringen
+              onDestinationSelected: (int index) {
+                setState(() {
+                  currentPageIndex = index;
+                });
+              },
+              selectedIndex: currentPageIndex,
+              destinations: navbar,
+              labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+            ),
+          ),
+        ),
       ),
       body: Container(
-        // Fügen Sie die BackdropFilter-Funktion hier ein, um den geblurten Hintergrund für den gesamten Body hinzuzufügen
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(highlight[0].image),
