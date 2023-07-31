@@ -64,7 +64,7 @@ class _NavigationState extends State<Navigation> {
   }
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     getHighlightForDisplay();
     return Scaffold(
       bottomNavigationBar: NavigationBar(
@@ -90,7 +90,7 @@ class _NavigationState extends State<Navigation> {
           child: Container(
             color: Colors.black.withOpacity(0.7),
             child: <Widget>[
-              const SearchPage(),
+              SearchPage(highlight: highlight[0]),
               const SoonPage(),
               const HomePage(),
               const ListsPage(),
