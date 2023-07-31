@@ -34,7 +34,7 @@ class StreamflixApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const Navigation(),
       theme: ThemeData(
-        colorScheme: lightColorScheme,
+        colorScheme: darkColorScheme,
         useMaterial3: true,
         fontFamily: 'Roboto',
         splashFactory: splashFactory,
