@@ -17,7 +17,7 @@ class HighlightModel {
     highlight.add(HighlightModel(
         name: 'Oppenheimer',
         genre: 'Action | Krieg | Biografie',
-        image: "Oppenheimer.jpg",
+        image: "assets/Oppenheimer.jpg",
         platform: 'Kino'));
 
     return highlight;
