@@ -38,14 +38,14 @@ class NeuheitenModel {
           platform: "Prime"),
     );
 
-     neuheiten.add(
+    neuheiten.add(
       NeuheitenModel(
           name: 'The Walking Dead',
           genre: 'Survival',
           image: "series/TheWalkingDead.png",
           platform: "Netflix"),
     );
-     neuheiten.add(
+    neuheiten.add(
       NeuheitenModel(
           name: 'Mrs Marvel',
           genre: 'Marvel',
