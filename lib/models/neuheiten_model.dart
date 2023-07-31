@@ -52,7 +52,7 @@ class NeuheitenModel {
           image: "series/MrsMarvel.webp",
           platform: "Disney"),
     );
-     neuheiten.add(
+    neuheiten.add(
       NeuheitenModel(
           name: 'Titans',
           genre: 'DC',
