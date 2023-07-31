@@ -63,7 +63,10 @@ class _HomePageState extends State<HomePage> {
                 _netflix(),
                 const SizedBox(
                   height: 20,
-                )
+                ),
+                _prime(),
+                const SizedBox(
+                  height: 20,)
               ],
             ),
           ),
@@ -432,6 +435,119 @@ Column _disney() {
     ],
   );
 }
+
+Column _prime() {
+  final primeNeuheiten = neuheiten.where((item) => item.platform == "Prime").toList();
+
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: Row(
+          children: const [
+            Text(
+              'Amazon Prime',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            SizedBox(width: 6),
+            Expanded(
+              flex: 1,
+              child: Divider(
+                color: Colors.white,
+                thickness: 1,
+              ),
+            ),
+            SizedBox(width: 10),
+          ],
+        ),
+      ),
+      const SizedBox(height: 15),
+      SizedBox(
+        height: 150,
+        child: ListView.separated(
+          itemCount: primeNeuheiten.length,
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          separatorBuilder: (context, index) => const SizedBox(width: 20),
+          itemBuilder: (context, index) {
+            return Container(
+              width: 110,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Stack(
+                children: [
+                  // Hintergrundbild
+                  Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(primeNeuheiten[index].image),
+                        fit: BoxFit.cover,
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  // Schwarzer transparenter Gradient
+                  Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Colors.transparent,
+                          Colors.black.withOpacity(0.7),
+                        ],
+                      ),
+                    ),
+                  ),
+                  // Texte
+                  Positioned(
+                    left: 8,
+                    bottom: 8,
+                    right: 8,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          primeNeuheiten[index].name,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          primeNeuheiten[index].genre,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w300,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ),
+    ],
+  );
+}
+
 
 Column _netflix() {
   final netflixNeuheiten = neuheiten.where((item) => item.platform == "Netflix").toList();
