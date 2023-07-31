@@ -88,7 +88,7 @@ class NeuheitenModel {
           image: "assets/series/Supergirl.webp",
           platform: "Disney"),
     );
-   neuheiten.add(
+    neuheiten.add(
       NeuheitenModel(
           name: 'Arrow',
           genre: 'DC',
