@@ -72,11 +72,11 @@ class _NavigationState extends State<Navigation> {
           color: Colors.black.withOpacity(0.7),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left:10.0, right: 10.0, bottom: 10.0),
+          padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color.fromARGB(255, 33, 33, 33).withOpacity(0.4),
+              color: const Color.fromARGB(255, 33, 33, 33).withOpacity(0.4),
             ),
             child: NavigationBar(
               //Hier borderRadius unterbringen
@@ -87,7 +87,8 @@ class _NavigationState extends State<Navigation> {
               },
               selectedIndex: currentPageIndex,
               destinations: navbar,
-              labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+              labelBehavior:
+                  NavigationDestinationLabelBehavior.onlyShowSelected,
             ),
           ),
         ),
