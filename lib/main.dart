@@ -28,10 +28,7 @@ class StreamflixApp extends StatelessWidget {
 
   const StreamflixApp({super.key});
 
-  
-
   @override
-
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -60,10 +57,9 @@ class Navigation extends StatefulWidget {
 }
 
 class _NavigationState extends State<Navigation> {
-
   int currentPageIndex = 2;
   List<HighlightModel> highlight = [];
-  void getHighlightForDisplay(){
+  void getHighlightForDisplay() {
     highlight = HighlightModel.getHighlight();
   }
 
