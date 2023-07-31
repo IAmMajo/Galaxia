@@ -74,6 +74,43 @@ class NeuheitenModel {
           image: "assets/series/BreakingBad.webp",
           platform: "Prime"),
     );
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'Star Wars: Clone Wars',
+          genre: 'Star Wars',
+          image: "assets/series/StarWarsCloneWars.jpeg",
+          platform: "Disney"),
+    );
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'Supergirl',
+          genre: 'DC',
+          image: "assets/series/Supergirl.webp",
+          platform: "Disney"),
+    );
+   neuheiten.add(
+      NeuheitenModel(
+          name: 'Arrow',
+          genre: 'DC',
+          image: "assets/series/Arrow.jpg",
+          platform: "Netflix"),
+    );
+
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'Wanda Vision',
+          genre: 'Marvel',
+          image: "assets/series/WandaVision.webp",
+          platform: "Netflix"),
+    );
+
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'A Quiet Place',
+          genre: 'Horror',
+          image: "assets/AQuietPlace.webp",
+          platform: "Netflix"),
+    );
 
     return neuheiten;
   }
