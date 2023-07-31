@@ -664,118 +664,120 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-Container _dailyHighlight() {
-  return Container(
-    margin: const EdgeInsets.all(10),
-    alignment: Alignment.center,
-    height: 300,
-    child: Stack(
-      children: [
-        Container(
-          height: 300,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            image: DecorationImage(
-              image: AssetImage(highlight[0].image),
-              fit: BoxFit.cover,
+  Container _dailyHighlight() {
+    return Container(
+      margin: const EdgeInsets.all(10),
+      alignment: Alignment.center,
+      height: 300,
+      child: Stack(
+        children: [
+          Container(
+            height: 300,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              image: DecorationImage(
+                image: AssetImage(highlight[0].image),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
-        Container(
-          height: 300,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Colors.transparent,
-                Colors.black.withOpacity(0.5),
-              ],
+          Container(
+            height: 300,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.black.withOpacity(0.5),
+                ],
+              ),
             ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  highlight[0].name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 20,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    highlight[0].name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                Text(
-                  highlight[0].genre,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 13,
+                  Text(
+                    highlight[0].genre,
+                    style: const TextStyle(
+                      color: Colors.grey,
+                      fontSize: 13,
+                    ),
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 3),
-                      child: TextButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.black.withOpacity(0.5),
-                          ),
-                          overlayColor: MaterialStateProperty.all<Color>(
-                            Colors.white.withOpacity(0.1),
-                          ),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 3),
+                        child: TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
                             ),
                           ),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          '▶ Streamen',
-                          style: TextStyle(color: Colors.white),
+                          onPressed: () {},
+                          child: const Text(
+                            '▶ Streamen',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 3),
-                      child: TextButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.black.withOpacity(0.5),
-                          ),
-                          overlayColor: MaterialStateProperty.all<Color>(
-                            Colors.white.withOpacity(0.1),
-                          ),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 3),
+                        child: TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
                             ),
                           ),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          '+ Liste hinzufügen',
-                          style: TextStyle(color: Colors.white),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Liste hinzufügen',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
-    ),
-  );
-}
+        ],
+      ),
+    );
+  }
 
   AppBar appBar() {
     return AppBar(
