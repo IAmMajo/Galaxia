@@ -18,7 +18,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'Spider-Man',
           genre: 'MARVEL',
-          image: "SpiderManNoWayHome.jpg",
+          image: "assets/SpiderManNoWayHome.jpg",
           platform: "N"),
     );
 
@@ -26,7 +26,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'Game of Thrones',
           genre: 'Mittelalter',
-          image: "series/GameofThrones.jpg",
+          image: "assets/series/GameofThrones.jpg",
           platform: "WOW"),
     );
 
@@ -34,7 +34,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'König der Löwen',
           genre: 'Disney',
-          image: "TheLionKingRemake.jpg",
+          image: "assets/TheLionKingRemake.jpg",
           platform: "D"),
     );
 
