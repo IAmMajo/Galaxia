@@ -63,7 +63,7 @@ class NeuheitenModel {
       NeuheitenModel(
           name: 'The Boys',
           genre: 'Antiheros',
-          image: "assets/series/TheBoys.jpg",
+          image: "series/TheBoys.jpg",
           platform: "Prime"),
     );
 
@@ -71,7 +71,7 @@ class NeuheitenModel {
       NeuheitenModel(
           name: 'Breaking Bad',
           genre: 'Thriller',
-          image: "assets/series/BreakingBad.webp",
+          image: "series/BreakingBad.webp",
           platform: "Prime"),
     );
 

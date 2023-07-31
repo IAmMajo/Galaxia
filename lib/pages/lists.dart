@@ -33,39 +33,45 @@ class ListsPage extends StatelessWidget {
             child: ListView(
               children: [
                 _listview(lists),
-                Container(
-                  margin: EdgeInsets.only(top: 30),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 150, right: 150),
-                    child: TextButton(
-                      style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all<Color>(
-                                  Colors.black.withOpacity(0.5),
-                                ),
-                                overlayColor: MaterialStateProperty.all<Color>(
-                                  Colors.white.withOpacity(0.1),
-                                ),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                              onPressed: () {},
-                              child: const Text(
-                                '+ Liste hinzufügen',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                    ),
-                  ),
-                )
+                const SizedBox(
+                  height: 30,
+                ),
+                _newListbtn()
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  Container _newListbtn() {
+    return Container(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 150, right: 150),
+                  child: TextButton(
+                    style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                Colors.black.withOpacity(0.5),
+                              ),
+                              overlayColor: MaterialStateProperty.all<Color>(
+                                Colors.white.withOpacity(0.1),
+                              ),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: const Text(
+                              '+ Liste hinzufügen',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                  ),
+                ),
+              );
   }
 
   Column _listview(List<ListModel> lists) {
