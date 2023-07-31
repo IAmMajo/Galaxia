@@ -42,8 +42,8 @@ const darkColorScheme = ColorScheme(
   onPrimaryContainer: Color(0xFFFFDAD3),
   secondary: Color(0xFFE7BDB4),
   onSecondary: Color(0xFF442A24),
-  secondaryContainer: Color(0xFF5D3F39),
-  onSecondaryContainer: Color(0xFFFFDAD3),
+  secondaryContainer: Color.fromARGB(130, 65, 65, 65),
+  onSecondaryContainer: Color.fromARGB(255, 196, 196, 196),
   tertiary: Color(0xFFDBC48C),
   onTertiary: Color(0xFF3C2F04),
   tertiaryContainer: Color(0xFF544519),
@@ -52,10 +52,17 @@ const darkColorScheme = ColorScheme(
   errorContainer: Color(0xFF93000A),
   onError: Color(0xFF690005),
   onErrorContainer: Color(0xFFFFDAD6),
-  background: Color(0xFF201A19),
+  background: Color.fromARGB(255, 29, 29, 29),
   onBackground: Color(0xFFEDE0DD),
-  surface: Color(0xFF201A19),
+
+   //Das hier ist die Farbe der Navbar
+  surface: Colors.transparent,
+
+  //Das ist übrigens die Textfarbe, da ich die ja auch dynamisch mit einem neuen Highlight ändern
+  //würde
   onSurface: Color(0xFFEDE0DD),
+
+
   surfaceVariant: Color(0xFF534340),
   onSurfaceVariant: Color(0xFFD8C2BD),
   outline: Color(0xFFA08C88),
@@ -63,7 +70,10 @@ const darkColorScheme = ColorScheme(
   inverseSurface: Color(0xFFEDE0DD),
   inversePrimary: Color(0xFFB72200),
   shadow: Color(0xFF000000),
-  surfaceTint: Color(0xFFFFB4A4),
+
+ 
+  surfaceTint: Color.fromARGB(255, 11, 11, 11),
+  
   outlineVariant: Color(0xFF534340),
   scrim: Color(0xFF000000),
 );
