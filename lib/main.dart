@@ -64,7 +64,7 @@ class _NavigationState extends State<Navigation> {
   }
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     getHighlightForDisplay();
     return Scaffold(
       bottomNavigationBar: NavigationBar(
