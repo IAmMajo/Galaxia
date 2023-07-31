@@ -50,6 +50,8 @@ dev_dependencies:
 flutter:
   assets:
     - assets/
+    - assets/licenses/
+    - assets/series/
 
   fonts:
     - family: Roboto

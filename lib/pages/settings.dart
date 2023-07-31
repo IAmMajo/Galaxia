@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:streamflix/components/login.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text('Optionen', style: Theme.of(context).textTheme.displayLarge),
-    );
+    return const Login();
   }
 }
