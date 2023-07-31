@@ -52,6 +52,28 @@ class NeuheitenModel {
           image: "series/MrsMarvel.webp",
           platform: "Disney"),
     );
+     neuheiten.add(
+      NeuheitenModel(
+          name: 'Titans',
+          genre: 'DC',
+          image: "series/Titans.jpg",
+          platform: "Netflix"),
+    );
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'The Boys',
+          genre: 'Antiheros',
+          image: "series/TheBoys.jpg",
+          platform: "Prime"),
+    );
+
+    neuheiten.add(
+      NeuheitenModel(
+          name: 'Breaking Bad',
+          genre: 'Thriller',
+          image: "series/BreakingBad.webp",
+          platform: "Prime"),
+    );
 
     return neuheiten;
   }
