@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "947538191533",
+    "project_id": "flutterpmgalaxia",
+    "storage_bucket": "flutterpmgalaxia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947538191533:android:b4e43129d1384d1945d224",
+        "android_client_info": {
+          "package_name": "dev.maxoverlack.streamflix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947538191533-49fvjd1k59a9pf7c9a7k74f5fitfta8k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4OgiNm9Y2gNFKU_qaydeyZ7Ni_tRXb2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947538191533-49fvjd1k59a9pf7c9a7k74f5fitfta8k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "dev.maxoverlack.streamflix"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
