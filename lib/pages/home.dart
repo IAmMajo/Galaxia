@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     getInitialInfo();
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
