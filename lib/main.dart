@@ -11,6 +11,13 @@ import 'pages/lists.dart';
 import 'pages/search.dart';
 import 'pages/settings.dart';
 import 'pages/soon.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+//das muss noch irgendwo inzugefügt werden, aber ich weiss nicht wo
+// await Firebase.initializeApp(
+//   options: DefaultFirebaseOptions.currentPlatform,
+// );
 
 void main() {
   LicenseRegistry.addLicense(() async* {
