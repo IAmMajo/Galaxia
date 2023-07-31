@@ -16,13 +16,12 @@ class _LoginState extends State<Login> {
 
   List<HighlightModel> highlight = [];
 
-  void getHighlight(){
+  void getHighlight() {
     highlight = HighlightModel.getHighlight();
   }
 
   @override
   Widget build(BuildContext context) {
-
     getHighlight();
     return Scaffold(
       body: Container(
@@ -39,7 +38,6 @@ class _LoginState extends State<Login> {
               children: [
                 appBar(),
                 _loginform(context),
-                
               ],
             ),
           ),
@@ -63,8 +61,7 @@ class _LoginState extends State<Login> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 controller: emailController,
                 decoration: const InputDecoration(
@@ -78,8 +75,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               child: TextFormField(
                 controller: passwordController,
                 obscureText: true,
