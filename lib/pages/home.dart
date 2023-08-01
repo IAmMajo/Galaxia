@@ -253,22 +253,22 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                 showModalBottomSheet(
-                  context: context, 
-                   builder: (BuildContext context) {
-                       return SizedBox(
-                   height: 600,
-                    child: Center(
-                     child: ElevatedButton(
-                    child: const Text('close'),
-                    onPressed: () {
-                      Navigator.pop(context);
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        height: 600,
+                        child: Center(
+                          child: ElevatedButton(
+                            child: const Text('close'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      );
                     },
-                  ),
-                ),
-              );
-            },
-          );
+                  );
                 },
                 child: Container(
                   width: 110,
