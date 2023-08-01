@@ -210,7 +210,7 @@ class _SearchPageState extends State<SearchPage> {
           child: Row(
             children: const [
               Text(
-                'Ergebnisse',
+                'Ergebniss',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
