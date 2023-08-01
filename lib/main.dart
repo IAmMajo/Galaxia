@@ -26,7 +26,7 @@ Future<void> main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   //für die tests//
-  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  //await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   //
   print(FirebaseAuth.instance.currentUser);
   FirebaseAuth.instance.authStateChanges().listen((User? user) {
