@@ -5,20 +5,41 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:streamflix/models/highlight_model.dart';
 import 'package:streamflix/models/neuheiten_model.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   final HighlightModel highlight;
 
   const SearchPage({Key? key, required this.highlight}) : super(key: key);
 
   @override
+  _SearchPageState createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  List<HighlightModel> highlight = [];
+  List<NeuheitenModel> neuheiten = [];
+  List<NeuheitenModel> searchResults = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getHighlight();
+  }
+
+  void getHighlight() {
+    highlight = HighlightModel.getHighlight();
+    neuheiten = NeuheitenModel.getneuheiten();
+  }
+  @override
   Widget build(BuildContext context) {
     List<HighlightModel> highlight = [];
     List<NeuheitenModel> neuheiten = [];
+    List<NeuheitenModel> searchResults = [];
+
+
     void getHighlight() {
       highlight = HighlightModel.getHighlight();
       neuheiten = NeuheitenModel.getneuheiten();
-    }
-
+    }   
     getHighlight();
     return Scaffold(
         body: Container(
@@ -45,52 +66,7 @@ class SearchPage extends StatelessWidget {
     ));
   }
 
-  Column _searchergebnis(List<NeuheitenModel> neuheiten) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 20),
-          child: Row(
-            children: const [
-              Text(
-                'Ergebnisse',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              SizedBox(width: 6),
-              Expanded(
-                flex: 1,
-                child: Divider(
-                  color: Colors.white,
-                  thickness: 1,
-                ),
-              ),
-              SizedBox(width: 10),
-            ],
-          ),
-        ),
-        const SizedBox(height: 15),
-        SizedBox(
-          height: 800,
-          child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-            ),
-            itemCount: neuheiten.length,
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            itemBuilder: (context, index) {
-              return _buildNeuheitenItem(neuheiten[index]);
-            },
-          ),
-        ),
-      ],
-    );
-  }
+  
 
   Widget _buildNeuheitenItem(NeuheitenModel item) {
     return Container(
@@ -161,6 +137,21 @@ class SearchPage extends StatelessWidget {
     );
   }
 
+    void searchNeuheiten(String query) {
+    searchResults.clear();
+    if (query.isEmpty) {
+      setState(() {
+        searchResults.addAll(neuheiten);
+      });
+    } else {
+      setState(() {
+        searchResults.addAll(neuheiten.where(
+          (neuheit) => neuheit.name.toLowerCase().contains(query.toLowerCase()),
+        ));
+      });
+    }
+  }
+
   Container _searchbar() {
     return Container(
       margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
@@ -206,7 +197,57 @@ class SearchPage extends StatelessWidget {
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide.none)),
+                onChanged: searchNeuheiten,
       ),
+    );
+  }
+
+
+  Column _searchergebnis(List<NeuheitenModel> neuheiten) {
+     final displayList = searchResults.isNotEmpty ? searchResults : neuheiten;
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(
+            children: const [
+              Text(
+                'Ergebnisse',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(width: 6),
+              Expanded(
+                flex: 1,
+                child: Divider(
+                  color: Colors.white,
+                  thickness: 1,
+                ),
+              ),
+              SizedBox(width: 10),
+            ],
+          ),
+        ),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 800,
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+            itemCount: displayList.length,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            itemBuilder: (context, index) {
+              return _buildNeuheitenItem(displayList[index]);
+            },
+          ),
+        ),
+      ],
     );
   }
 }
