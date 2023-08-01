@@ -29,17 +29,18 @@ class _SearchPageState extends State<SearchPage> {
     highlight = HighlightModel.getHighlight();
     neuheiten = NeuheitenModel.getneuheiten();
   }
+
   @override
   Widget build(BuildContext context) {
     List<HighlightModel> highlight = [];
     List<NeuheitenModel> neuheiten = [];
     List<NeuheitenModel> searchResults = [];
 
-
     void getHighlight() {
       highlight = HighlightModel.getHighlight();
       neuheiten = NeuheitenModel.getneuheiten();
-    }   
+    }
+
     getHighlight();
     return Scaffold(
         body: Container(
@@ -65,8 +66,6 @@ class _SearchPageState extends State<SearchPage> {
       ),
     ));
   }
-
-  
 
   Widget _buildNeuheitenItem(NeuheitenModel item) {
     return Container(
@@ -137,7 +136,7 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-    void searchNeuheiten(String query) {
+  void searchNeuheiten(String query) {
     searchResults.clear();
     if (query.isEmpty) {
       setState(() {
@@ -197,14 +196,13 @@ class _SearchPageState extends State<SearchPage> {
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide.none)),
-                onChanged: searchNeuheiten,
+        onChanged: searchNeuheiten,
       ),
     );
   }
 
-
   Column _searchergebnis(List<NeuheitenModel> neuheiten) {
-     final displayList = searchResults.isNotEmpty ? searchResults : neuheiten;
+    final displayList = searchResults.isNotEmpty ? searchResults : neuheiten;
     return Column(
       children: [
         Padding(
