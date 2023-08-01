@@ -116,99 +116,92 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                 showModalBottomSheet<dynamic>(
-                  isScrollControlled: true,
-                  context: context, 
-                   builder: (BuildContext context) {
-                       return SizedBox(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 300,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                image: AssetImage(
-                                 neuheiten[index].image
+                  showModalBottomSheet<dynamic>(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                      image: AssetImage(neuheiten[index].image),
+                                      fit: BoxFit.cover),
                                 ),
-                                fit: BoxFit.cover
                               ),
-                            ),
-                          ),
-
-                          Container(
-                            child: Text(
-                              neuheiten[index].name,
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold
+                              Container(
+                                child: Text(
+                                  neuheiten[index].name,
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
-                            ),
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 10,),
-                                   Expanded(
-                                    flex: 1,
-                                     child: Divider(
-                                      color: Colors.white,
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
                                         thickness: 1,
                                       ),
                                     ),
-                                     SizedBox(width: 10),
-                                     Text('STREAMEN AUF',
-                                     style: TextStyle(
-                                      color: Colors.white
-                                     ),
-                                     ),
-                                     SizedBox(width: 10),
-                                     Expanded(
-                                    flex: 1,
-                                     child: Divider(
-                                      color: Colors.white,
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'STREAMEN AUF',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
                                         thickness: 1,
                                       ),
                                     ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Text(neuheiten[index].platform,
-                                style: TextStyle(
-                                  color: Colors.white
+                                  ],
                                 ),
+                              ),
+                              Container(
+                                child: Row(children: [
+                                  Text(
+                                    neuheiten[index].platform,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ]),
+                              ),
+                              Container(
+                                child: Text(
+                                  neuheiten[index].des,
+                                  style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
                                 ),
-                              ]),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                          Container(
-                            child: Text(neuheiten[index].des,
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 13
-                            ),
-                            ),
-                          ),
-                          Center(
-                           child: ElevatedButton(
-                          child: const Text('close'),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                                      ),
-                                    ),
-                        ],
-                      ),
-                    ),
-              );
-            },
-          );
+                        ),
+                      );
+                    },
+                  );
                 },
                 child: Container(
                   width: 110,
@@ -310,841 +303,845 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _meineListe() {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: const [
-            Text(
-              'Meine Liste',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(
+            children: const [
+              Text(
+                'Meine Liste',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            SizedBox(width: 6),
-            Expanded(
-              flex: 1,
-              child: Divider(
-                color: Colors.white,
-                thickness: 1,
+              SizedBox(width: 6),
+              Expanded(
+                flex: 1,
+                child: Divider(
+                  color: Colors.white,
+                  thickness: 1,
+                ),
               ),
-            ),
-            SizedBox(width: 10),
-          ],
+              SizedBox(width: 10),
+            ],
+          ),
         ),
-      ),
-      const SizedBox(height: 15),
-      SizedBox(
-        height: 150,
-        child: ListView.separated(
-          itemCount: meineListe.length,
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          separatorBuilder: (context, index) => const SizedBox(width: 25),
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                showModalBottomSheet<dynamic>(
-                  isScrollControlled: true,
-                  context: context, 
-                  builder: (BuildContext context) {
-                    return SizedBox(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            itemCount: meineListe.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => const SizedBox(width: 25),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  showModalBottomSheet<dynamic>(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      meineListe[index].image,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  meineListe[index].name,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'STREAMEN AUF',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      meineListe[index].platform,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  meineListe[index].des,
+                                  style: const TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Stack(
+                    children: [
+                      // Hintergrundbild
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(meineListe[index].image),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.transparent,
+                              Colors.black.withOpacity(0.7),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Texte
+                      Positioned(
+                        left: 8,
+                        bottom: 8,
+                        right: 8,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: 300,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    meineListe[index].image,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
+                            Text(
+                              meineListe[index].name,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
                               ),
                             ),
-                            Container(
-                              child: Text(
-                                meineListe[index].name,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'STREAMEN AUF',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    meineListe[index].platform,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                meineListe[index].des,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 13,
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: ElevatedButton(
-                                child: const Text('close'),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
+                            Text(
+                              meineListe[index].genre,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 12,
                               ),
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                );
-              },
-              child: Container(
-                width: 110,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
+                    ],
+                  ),
                 ),
-                child: Stack(
-                  children: [
-                    // Hintergrundbild
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(meineListe[index].image),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black.withOpacity(0.7),
-                          ],
-                        ),
-                      ),
-                    ),
-                    // Texte
-                    Positioned(
-                      left: 8,
-                      bottom: 8,
-                      right: 8,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            meineListe[index].name,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            meineListe[index].genre,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
-      ),
-    ],
-  );
-}
-Column _disney() {
-  final disneyNeuheiten = neuheiten.where((item) => item.platform == "Disney").toList();
+      ],
+    );
+  }
 
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: const [
-            Text(
-              'Disney +',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+  Column _disney() {
+    final disneyNeuheiten =
+        neuheiten.where((item) => item.platform == "Disney").toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(
+            children: const [
+              Text(
+                'Disney +',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            SizedBox(width: 6),
-            Expanded(
-              flex: 1,
-              child: Divider(
-                color: Colors.white,
-                thickness: 1,
+              SizedBox(width: 6),
+              Expanded(
+                flex: 1,
+                child: Divider(
+                  color: Colors.white,
+                  thickness: 1,
+                ),
               ),
-            ),
-            SizedBox(width: 10),
-          ],
+              SizedBox(width: 10),
+            ],
+          ),
         ),
-      ),
-      const SizedBox(height: 15),
-      SizedBox(
-        height: 150,
-        child: ListView.separated(
-          itemCount: disneyNeuheiten.length,
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          separatorBuilder: (context, index) => const SizedBox(width: 20),
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                showModalBottomSheet<dynamic>(
-                  isScrollControlled: true,
-                  context: context, 
-                  builder: (BuildContext context) {
-                    return SizedBox(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            itemCount: disneyNeuheiten.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => const SizedBox(width: 20),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  showModalBottomSheet<dynamic>(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      disneyNeuheiten[index].image,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  disneyNeuheiten[index].name,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'STREAMEN AUF',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      disneyNeuheiten[index].platform,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  disneyNeuheiten[index].des,
+                                  style: const TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Stack(
+                    children: [
+                      // Hintergrundbild
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(disneyNeuheiten[index].image),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.transparent,
+                              Colors.black.withOpacity(0.7),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Texte
+                      Positioned(
+                        left: 8,
+                        bottom: 8,
+                        right: 8,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: 300,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    disneyNeuheiten[index].image,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
+                            Text(
+                              disneyNeuheiten[index].name,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
                               ),
                             ),
-                            Container(
-                              child: Text(
-                                disneyNeuheiten[index].name,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'STREAMEN AUF',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    disneyNeuheiten[index].platform,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                disneyNeuheiten[index].des,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 13,
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: ElevatedButton(
-                                child: const Text('close'),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
+                            Text(
+                              disneyNeuheiten[index].genre,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 12,
                               ),
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                );
-              },
-              child: Container(
-                width: 110,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
+                    ],
+                  ),
                 ),
-                child: Stack(
-                  children: [
-                    // Hintergrundbild
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(disneyNeuheiten[index].image),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black.withOpacity(0.7),
-                          ],
-                        ),
-                      ),
-                    ),
-                    // Texte
-                    Positioned(
-                      left: 8,
-                      bottom: 8,
-                      right: 8,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            disneyNeuheiten[index].name,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            disneyNeuheiten[index].genre,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  Column _prime() {
+    final primeNeuheiten =
+        neuheiten.where((item) => item.platform == "Prime").toList();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(
+            children: const [
+              Text(
+                'Amazon Prime',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-            );
-          },
-        ),
-      ),
-    ],
-  );
-}
-
-Column _prime() {
-  final primeNeuheiten = neuheiten.where((item) => item.platform == "Prime").toList();
-
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: const [
-            Text(
-              'Amazon Prime',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+              SizedBox(width: 6),
+              Expanded(
+                flex: 1,
+                child: Divider(
+                  color: Colors.white,
+                  thickness: 1,
+                ),
               ),
-            ),
-            SizedBox(width: 6),
-            Expanded(
-              flex: 1,
-              child: Divider(
-                color: Colors.white,
-                thickness: 1,
-              ),
-            ),
-            SizedBox(width: 10),
-          ],
+              SizedBox(width: 10),
+            ],
+          ),
         ),
-      ),
-      const SizedBox(height: 15),
-      SizedBox(
-        height: 150,
-        child: ListView.separated(
-          itemCount: primeNeuheiten.length,
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          separatorBuilder: (context, index) => const SizedBox(width: 20),
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                showModalBottomSheet<dynamic>(
-                  isScrollControlled: true,
-                  context: context, 
-                  builder: (BuildContext context) {
-                    return SizedBox(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            itemCount: primeNeuheiten.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => const SizedBox(width: 20),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  showModalBottomSheet<dynamic>(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      primeNeuheiten[index].image,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  primeNeuheiten[index].name,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'STREAMEN AUF',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      primeNeuheiten[index].platform,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  primeNeuheiten[index].des,
+                                  style: const TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Stack(
+                    children: [
+                      // Hintergrundbild
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(primeNeuheiten[index].image),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.transparent,
+                              Colors.black.withOpacity(0.7),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Texte
+                      Positioned(
+                        left: 8,
+                        bottom: 8,
+                        right: 8,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: 300,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    primeNeuheiten[index].image,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
+                            Text(
+                              primeNeuheiten[index].name,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
                               ),
                             ),
-                            Container(
-                              child: Text(
-                                primeNeuheiten[index].name,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'STREAMEN AUF',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    primeNeuheiten[index].platform,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                primeNeuheiten[index].des,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 13,
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: ElevatedButton(
-                                child: const Text('close'),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
+                            Text(
+                              primeNeuheiten[index].genre,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 12,
                               ),
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                );
-              },
-              child: Container(
-                width: 110,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
+                    ],
+                  ),
                 ),
-                child: Stack(
-                  children: [
-                    // Hintergrundbild
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(primeNeuheiten[index].image),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black.withOpacity(0.7),
-                          ],
-                        ),
-                      ),
-                    ),
-                    // Texte
-                    Positioned(
-                      left: 8,
-                      bottom: 8,
-                      right: 8,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            primeNeuheiten[index].name,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            primeNeuheiten[index].genre,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
-      ),
-    ],
-  );
-}
+      ],
+    );
+  }
 
   Column _netflix() {
-  final netflixNeuheiten = neuheiten.where((item) => item.platform == "Netflix").toList();
+    final netflixNeuheiten =
+        neuheiten.where((item) => item.platform == "Netflix").toList();
 
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Padding(
-        padding: const EdgeInsets.only(left: 20),
-        child: Row(
-          children: const [
-            Text(
-              'Netflix',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Row(
+            children: const [
+              Text(
+                'Netflix',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-            ),
-            SizedBox(width: 6),
-            Expanded(
-              flex: 1,
-              child: Divider(
-                color: Colors.white,
-                thickness: 1,
+              SizedBox(width: 6),
+              Expanded(
+                flex: 1,
+                child: Divider(
+                  color: Colors.white,
+                  thickness: 1,
+                ),
               ),
-            ),
-            SizedBox(width: 10),
-          ],
+              SizedBox(width: 10),
+            ],
+          ),
         ),
-      ),
-      const SizedBox(height: 15),
-      SizedBox(
-        height: 150,
-        child: ListView.separated(
-          itemCount: netflixNeuheiten.length,
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsets.only(left: 20, right: 20),
-          separatorBuilder: (context, index) => const SizedBox(width: 20),
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                showModalBottomSheet<dynamic>(
-                  isScrollControlled: true,
-                  context: context, 
-                  builder: (BuildContext context) {
-                    return SizedBox(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+        const SizedBox(height: 15),
+        SizedBox(
+          height: 150,
+          child: ListView.separated(
+            itemCount: netflixNeuheiten.length,
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            separatorBuilder: (context, index) => const SizedBox(width: 20),
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  showModalBottomSheet<dynamic>(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SizedBox(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                      netflixNeuheiten[index].image,
+                                    ),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  netflixNeuheiten[index].name,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'STREAMEN AUF',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      netflixNeuheiten[index].platform,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  netflixNeuheiten[index].des,
+                                  style: const TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 13,
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Stack(
+                    children: [
+                      // Hintergrundbild
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(netflixNeuheiten[index].image),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.transparent,
+                              Colors.black.withOpacity(0.7),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Texte
+                      Positioned(
+                        left: 8,
+                        bottom: 8,
+                        right: 8,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: 300,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    netflixNeuheiten[index].image,
-                                  ),
-                                  fit: BoxFit.cover,
-                                ),
+                            Text(
+                              netflixNeuheiten[index].name,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 14,
                               ),
                             ),
-                            Container(
-                              child: Text(
-                                netflixNeuheiten[index].name,
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'STREAMEN AUF',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Divider(
-                                      color: Colors.white,
-                                      thickness: 1,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                children: [
-                                  Text(
-                                    netflixNeuheiten[index].platform,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Text(
-                                netflixNeuheiten[index].des,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 13,
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: ElevatedButton(
-                                child: const Text('close'),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
+                            Text(
+                              netflixNeuheiten[index].genre,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                                fontSize: 12,
                               ),
                             ),
                           ],
                         ),
                       ),
-                    );
-                  },
-                );
-              },
-              child: Container(
-                width: 110,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
+                    ],
+                  ),
                 ),
-                child: Stack(
-                  children: [
-                    // Hintergrundbild
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(netflixNeuheiten[index].image),
-                          fit: BoxFit.cover,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Colors.transparent,
-                            Colors.black.withOpacity(0.7),
-                          ],
-                        ),
-                      ),
-                    ),
-                    // Texte
-                    Positioned(
-                      left: 8,
-                      bottom: 8,
-                      right: 8,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            netflixNeuheiten[index].name,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14,
-                            ),
-                          ),
-                          Text(
-                            netflixNeuheiten[index].genre,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w300,
-                              fontSize: 12,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
-      ),
-    ],
-  );
-}
+      ],
+    );
+  }
 
   Container _dailyHighlight() {
     return Container(
