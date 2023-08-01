@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:streamflix/components/login.dart';
 import 'package:streamflix/components/signin.dart';
 
 class SettingsPage extends StatelessWidget {
