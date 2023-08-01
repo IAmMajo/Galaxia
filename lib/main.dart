@@ -15,7 +15,6 @@ import 'pages/lists.dart';
 import 'pages/search.dart';
 import 'pages/settings.dart';
 import 'pages/soon.dart';
-//firebase for server stuff
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
