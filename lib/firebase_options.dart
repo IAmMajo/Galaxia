@@ -69,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '947538191533',
     projectId: 'flutterpmgalaxia',
     storageBucket: 'flutterpmgalaxia.appspot.com',
-    iosClientId: '947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak.apps.googleusercontent.com',
+    iosClientId:
+        '947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak.apps.googleusercontent.com',
     iosBundleId: 'dev.maxoverlack.streamflix',
   );
 }
