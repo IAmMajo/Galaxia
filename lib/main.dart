@@ -1,25 +1,43 @@
+import 'dart:io';
 import 'dart:ui';
-
+//flutter packages
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:material_symbols_icons/outlined.dart';
+//selfmade packages
 import 'package:streamflix/models/highlight_model.dart';
+//color scheme
 import 'color_schemes.g.dart';
+//list of pages of the application
 import 'pages/home.dart';
 import 'pages/lists.dart';
 import 'pages/search.dart';
 import 'pages/settings.dart';
 import 'pages/soon.dart';
+//firebase for server stuff
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-//das muss noch irgendwo inzugefügt werden, aber ich weiss nicht wo
-// await Firebase.initializeApp(
-//   options: DefaultFirebaseOptions.currentPlatform,
-// );
-
-void main() {
+Future<void> main() async {
+  //Firebase initialization
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  //für die tests//
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+  //
+  print(FirebaseAuth.instance.currentUser);
+  FirebaseAuth.instance.authStateChanges().listen((User? user) {
+    if (user == null) {
+      print("User not signed in!");
+    } else {
+      print('User is signed in!');
+    }
+  });
+  //License registration
   LicenseRegistry.addLicense(() async* {
     yield LicenseEntryWithLineBreaks(
       ['Roboto'],

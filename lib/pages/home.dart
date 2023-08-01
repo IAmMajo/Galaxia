@@ -796,11 +796,11 @@ class _HomePageState extends State<HomePage> {
           decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.3),
               borderRadius: BorderRadius.circular(10)),
-          child: Image.asset(
-            "HamburgerImage.png",
-            height: 20,
-            width: 20,
-          ),
+          // child: Image.asset(
+          //   "HamburgerImage.png",
+          //   height: 20,
+          //  width: 20,
+          // ),
         ),
       ),
       actions: [

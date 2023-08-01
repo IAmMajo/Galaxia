@@ -1,19 +1,22 @@
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:streamflix/models/highlight_model.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signin extends StatefulWidget {
+  const Signin({super.key});
   @override
-  State<StatefulWidget> createState() => _LoginState();
+  State<StatefulWidget> createState() => _SigninState();
 }
 
-class _LoginState extends State<Login> {
-  final _formKey = GlobalKey<FormState>();
+class _SigninState extends State<Signin> {
+  final _formKeySignin = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  TextEditingController passworRepeatController = TextEditingController();
   List<HighlightModel> highlight = [];
 
   void getHighlight() {
@@ -37,7 +40,8 @@ class _LoginState extends State<Login> {
             child: ListView(
               children: [
                 appBar(),
-                _loginform(context),
+                _signinForm(context),
+                externalSigninButtons(),
               ],
             ),
           ),
@@ -48,13 +52,13 @@ class _LoginState extends State<Login> {
 
   AppBar appBar() {
     return AppBar(
-      title: const Text("Login"),
+      title: const Text("Signin"),
     );
   }
 
-  Form _loginform(BuildContext context) {
+  Form _signinForm(BuildContext context) {
     return Form(
-      key: _formKey,
+      key: _formKeySignin,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         child: Column(
@@ -69,6 +73,9 @@ class _LoginState extends State<Login> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
+                  } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                      .hasMatch(value)) {
+                    return 'Please enter a real email';
                   }
                   return null;
                 },
@@ -83,7 +90,26 @@ class _LoginState extends State<Login> {
                     border: OutlineInputBorder(), labelText: "Password"),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
+                    return 'Please enter a password';
+                  } else if (!RegExp(r'([^\s]){8,}').hasMatch(value)) {
+                    return 'Password contains illegal characters';
+                  }
+                  return null;
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: TextFormField(
+                controller: passworRepeatController,
+                obscureText: true,
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(), labelText: "Repeat Password"),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please repeat your password';
+                  } else if (value != passwordController.value.text) {
+                    return 'Passwords do not match';
                   }
                   return null;
                 },
@@ -95,8 +121,19 @@ class _LoginState extends State<Login> {
               child: Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // Navigate the user to the Home page
+                    if (_formKeySignin.currentState!.validate()) {
+                      FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                              email: emailController.value.text,
+                              password: passwordController.value.text)
+                          .then((value) => () async {
+                                print("user created");
+                                return value;
+                              })
+                          .onError((error, stackTrace) {
+                        print("error: $error");
+                        return Future.value();
+                      });
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Please fill input')),
@@ -107,19 +144,31 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8, vertical: 16.0),
-              child: Center(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Create Account (does nothing) )'),
-                ),
-              ),
-            )
           ],
         ),
       ),
     );
   }
+}
+
+//https://developers.google.com/identity/protocols/oauth2/scopes?hl=de#accesscontextmanager
+GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
+  'email',
+  //'https://www.googleapis.com/auth/cloud-platform',
+]);
+
+Future<void> _handleGoogleSignIn() async {
+  try {
+    await _googleSignIn.signIn();
+  } catch (error) {
+    print(error);
+  }
+}
+
+ButtonBar externalSigninButtons() {
+  return const ButtonBar(
+    children: [
+      ElevatedButton(onPressed: _handleGoogleSignIn, child: Text("Google"))
+    ],
+  );
 }
