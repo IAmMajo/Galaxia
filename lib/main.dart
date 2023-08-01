@@ -12,6 +12,11 @@ import 'pages/search.dart';
 import 'pages/settings.dart';
 import 'pages/soon.dart';
 
+//das muss noch irgendwo inzugefügt werden, aber ich weiss nicht wo
+// await Firebase.initializeApp(
+//   options: DefaultFirebaseOptions.currentPlatform,
+// );
+
 void main() {
   LicenseRegistry.addLicense(() async* {
     yield LicenseEntryWithLineBreaks(

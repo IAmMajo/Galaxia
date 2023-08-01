@@ -13,5 +13,6 @@
     "editor.defaultFormatter": "Dart-Code.dart-code"
   },
   "redhat.telemetry.enabled": false,
-  "gitlens.telemetry.enabled": false
+  "gitlens.telemetry.enabled": false,
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
