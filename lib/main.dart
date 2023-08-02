@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:material_symbols_icons/outlined.dart';
 //selfmade packages
 import 'package:streamflix/models/highlight_model.dart';
+import 'package:streamflix/pages/onboarding.dart';
 //color scheme
 import 'color_schemes.g.dart';
 //list of pages of the application
@@ -19,62 +20,80 @@ import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 Future<void> main() async {
-  //Firebase initialization
+  // Firebase initialization
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  //für die tests//
-  //await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-  //
-  print(FirebaseAuth.instance.currentUser);
-  FirebaseAuth.instance.authStateChanges().listen((User? user) {
-    if (user == null) {
-      print("User not signed in!");
-    } else {
-      print('User is signed in!');
-    }
-  });
-  //License registration
+
+  // License registration
   LicenseRegistry.addLicense(() async* {
     yield LicenseEntryWithLineBreaks(
       ['Roboto'],
       await rootBundle.loadString('assets/licenses/Roboto.txt'),
     );
   });
-  runApp(const StreamflixApp());
+
+  // Listen for auth state changes
+  FirebaseAuth.instance.authStateChanges().listen((User? user) {
+    bool isLoggedIn = user != null;
+    print("User is ${isLoggedIn ? 'signed in' : 'not signed in'}!");
+    runApp(StreamflixApp());
+  });
 }
 
-class StreamflixApp extends StatelessWidget {
+class StreamflixApp extends StatefulWidget {
   static InteractiveInkFeatureFactory get splashFactory =>
       kIsWeb ? InkRipple.splashFactory : InkSparkle.splashFactory;
 
-  const StreamflixApp({super.key});
+  const StreamflixApp({Key? key}) : super(key: key);
 
+  @override
+  _StreamflixAppState createState() => _StreamflixAppState();
+}
+
+class _StreamflixAppState extends State<StreamflixApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const Navigation(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.active) {
+            final user = snapshot.data;
+            final isLoggedIn = user != null;
+            return isLoggedIn
+                ? const Navigation()
+                : OnBoardingScreen(onLoginSuccess: updateLoginStatus);
+          } else {
+            // Show a loading screen or other UI while waiting for the auth state to be determined
+            return Scaffold(body: Center(child: CircularProgressIndicator()));
+          }
+        },
+      ),
       theme: ThemeData(
         colorScheme: darkColorScheme,
         useMaterial3: true,
         fontFamily: 'Roboto',
-        splashFactory: splashFactory,
       ),
       darkTheme: ThemeData(
         colorScheme: darkColorScheme,
         useMaterial3: true,
         fontFamily: 'Roboto',
         iconTheme: const IconThemeData(grade: -25),
-        splashFactory: splashFactory,
       ),
     );
+  }
+
+  void updateLoginStatus(bool isLoggedIn) {
+    setState(() {});
   }
 }
 
 class Navigation extends StatefulWidget {
-  const Navigation({super.key});
+  const Navigation({Key? key}) : super(key: key);
+
   @override
   State<Navigation> createState() => _NavigationState();
 }
@@ -82,6 +101,13 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   int currentPageIndex = 2;
   List<HighlightModel> highlight = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getHighlightForDisplay();
+  }
+
   void getHighlightForDisplay() {
     highlight = HighlightModel.getHighlight();
   }
