@@ -17,11 +17,11 @@ class HighlightModel {
     List<HighlightModel> highlight = [];
 
     highlight.add(HighlightModel(
-        name: 'Game of Thrones',
-        logo: "assets/logos/GameofThronesLogo.png",
-        genre: 'Fantasy | Middleage',
-        image: "assets/series/GameofThrones.jpg",
-        platform: 'Sky'));
+        name: 'Stranger Things',
+        logo: "assets/logos/StrangerThingsLogo.png",
+        genre: '90s | Horror',
+        image: "assets/series/StrangerThings.jpg",
+        platform: 'Netflix'));
 
     return highlight;
   }
