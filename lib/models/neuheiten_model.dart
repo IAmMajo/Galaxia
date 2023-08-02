@@ -29,7 +29,6 @@ class NeuheitenModel {
           platform: "Netflix"),
     );
 
-
     neuheiten.add(
       NeuheitenModel(
           name: 'Good Doctor',
