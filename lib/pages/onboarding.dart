@@ -144,7 +144,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             const Center(
                               child: Image(
                                 image: AssetImage(
-                                  "assets/TVAbendIlu.png",
+                                  "assets/AlleInhalteIlu.png",
                                 ),
                                 height: 300.0,
                                 width: 300.0,
