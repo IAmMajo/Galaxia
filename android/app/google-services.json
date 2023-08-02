@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "947538191533-bbvlv82ndjs3j493firga1fuj0jhk310.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.maxoverlack.streamflix",
+            "certificate_hash": "d30a96ccf97f9b72e4861c5f91bdd2efc9767b14"
+          }
+        },
+        {
           "client_id": "947538191533-ugsf599f0aimjkljs12vno2o1nja8hht.apps.googleusercontent.com",
           "client_type": 3
         }

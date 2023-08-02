@@ -40,7 +40,7 @@ class _SigninState extends State<Signin> {
               children: [
                 appBar(),
                 _signinForm(context),
-                externalSigninButtons(),
+                externalSigninButtons(context),
               ],
             ),
           ),
@@ -56,6 +56,7 @@ class _SigninState extends State<Signin> {
   }
 
   Form _signinForm(BuildContext context) {
+    BuildContext buildContext = context;
     return Form(
       key: _formKeySignin,
       child: Padding(
@@ -91,7 +92,7 @@ class _SigninState extends State<Signin> {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a password';
                   } else if (!RegExp(r'([^\s]){8,}').hasMatch(value)) {
-                    return 'Password contains illegal characters';
+                    return 'Password contains illegal characters or is not long enough';
                   }
                   return null;
                 },
@@ -156,18 +157,25 @@ GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
   //'https://www.googleapis.com/auth/cloud-platform',
 ]);
 
-Future<void> _handleGoogleSignIn() async {
+Future<void> _handleGoogleSignIn(BuildContext context) async {
   try {
     await _googleSignIn.signIn();
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(_googleSignIn.currentUser.toString())),
+    );
   } catch (error) {
     print(error);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(error.toString())),
+    );
   }
 }
 
-ButtonBar externalSigninButtons() {
-  return const ButtonBar(
+ButtonBar externalSigninButtons(BuildContext context) {
+  return ButtonBar(
     children: [
-      ElevatedButton(onPressed: _handleGoogleSignIn, child: Text("Google"))
+      ElevatedButton(
+          onPressed: () => _handleGoogleSignIn(context), child: Text("Google"))
     ],
   );
 }
