@@ -38,15 +38,17 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
       decoration: BoxDecoration(
-        color: isActive ? Color.fromARGB(255, 223, 67, 67) : Color.fromARGB(255, 218, 129, 129),
+        color: isActive
+            ? const Color.fromARGB(255, 223, 67, 67)
+            : const Color.fromARGB(255, 218, 129, 129),
         borderRadius: const BorderRadius.all(Radius.circular(12)),
       ),
     );
   }
 
-   List<HighlightModel> highlight = [];
+  List<HighlightModel> highlight = [];
 
-     void getInitialInfo() {
+  void getInitialInfo() {
     highlight = HighlightModel.getHighlight();
   }
 
@@ -58,9 +60,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(highlight[1].image),
-              fit: BoxFit.cover,
-              ),
-            ),
+            fit: BoxFit.cover,
+          ),
+        ),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
           child: Container(
@@ -111,7 +113,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(255, 238, 65, 65),
+                                  color: const Color.fromARGB(255, 238, 65, 65),
                                 ),
                                 child: const Text(
                                   "GALAXIA",
@@ -168,7 +170,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(255, 238, 65, 65),
+                                  color: const Color.fromARGB(255, 238, 65, 65),
                                 ),
                                 child: const Text(
                                   "KOMBINIERT",
@@ -225,7 +227,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(255, 238, 65, 65),
+                                  color: const Color.fromARGB(255, 238, 65, 65),
                                 ),
                                 child: const Text(
                                   "WOCHENHIGHLIGHT",
@@ -282,7 +284,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(255, 238, 65, 65),
+                                  color: const Color.fromARGB(255, 238, 65, 65),
                                 ),
                                 child: const Text(
                                   "LISTEN",
