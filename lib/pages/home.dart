@@ -135,11 +135,13 @@ class _HomePageState extends State<HomePage> {
                                 ),
                               ),
                               Container(
-                                child: Text(
-                                  neuheiten[index].name,
-                                  style: const TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold),
+                                height: 100,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(neuheiten[index].logo),
+                                    fit: BoxFit.contain
+                                  )
                                 ),
                               ),
                               Container(
@@ -245,20 +247,16 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              neuheiten[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              neuheiten[index].genre,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 12,
+                            Center(
+                              child: Container(
+                                height: 80,
+                                width: 110,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(neuheiten[index].logo),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -480,20 +478,16 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              meineListe[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              meineListe[index].genre,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 12,
+                            Center(
+                              child: Container(
+                                height: 50,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(meineListe[index].logo),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -691,20 +685,16 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              disneyNeuheiten[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              disneyNeuheiten[index].genre,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 12,
+                            Center(
+                              child: Container(
+                                height: 50,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(disneyNeuheiten[index].logo),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -902,20 +892,16 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              primeNeuheiten[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              primeNeuheiten[index].genre,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 12,
+                            Center(
+                              child: Container(
+                                height: 50,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(primeNeuheiten[index].logo),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -1113,20 +1099,16 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              netflixNeuheiten[index].name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              netflixNeuheiten[index].genre,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 12,
+                            Center(
+                              child: Container(
+                                height: 50,
+                                width: 90,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(netflixNeuheiten[index].logo),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
                               ),
                             ),
                           ],
@@ -1183,11 +1165,11 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Container(
                     height: 100,
-                    width: double.infinity,
+                    width: 300,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage(highlight[0].logo),
-                          fit: BoxFit.cover),
+                          fit: BoxFit.contain),
                     ),
                   ),
                   Text(

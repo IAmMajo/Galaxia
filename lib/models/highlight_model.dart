@@ -17,11 +17,11 @@ class HighlightModel {
     List<HighlightModel> highlight = [];
 
     highlight.add(HighlightModel(
-        name: 'Oppenheimer',
-        logo: "assets/logos/Oppenheimer.png",
-        genre: 'Action | Krieg | Biografie',
-        image: "assets/Oppenheimer.jpg",
-        platform: 'Kino'));
+        name: 'Game of Thrones',
+        logo: "assets/logos/GameofThronesLogo.png",
+        genre: 'Fantasy | Middleage',
+        image: "assets/series/GameofThrones.jpg",
+        platform: 'Sky'));
 
     return highlight;
   }
