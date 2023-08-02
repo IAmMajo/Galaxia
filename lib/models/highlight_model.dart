@@ -17,11 +17,11 @@ class HighlightModel {
     List<HighlightModel> highlight = [];
 
     highlight.add(HighlightModel(
-        name: 'Stranger Things',
-        logo: "assets/logos/StrangerThingsLogo.png",
-        genre: '90s | Horror',
-        image: "assets/series/StrangerThings.jpg",
-        platform: 'Netflix'));
+        name: 'The 100',
+        logo: "assets/logos/The100Logo.webp",
+        genre: 'Dystopian',
+        image: "assets/series/The100.jpg",
+        platform: 'Prime'));
 
     return highlight;
   }
