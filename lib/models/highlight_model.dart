@@ -1,11 +1,13 @@
 class HighlightModel {
   String name;
+  String logo;
   String genre;
   String image;
   String platform;
 
   HighlightModel({
     required this.name,
+    required this.logo,
     required this.genre,
     required this.image,
     required this.platform,
@@ -16,6 +18,7 @@ class HighlightModel {
 
     highlight.add(HighlightModel(
         name: 'Oppenheimer',
+        logo: "assets/logos/Oppenheimer.png",
         genre: 'Action | Krieg | Biografie',
         image: "assets/Oppenheimer.jpg",
         platform: 'Kino'));

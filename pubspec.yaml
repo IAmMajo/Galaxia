@@ -55,6 +55,7 @@ flutter:
     - assets/
     - assets/licenses/
     - assets/series/
+    - assets/logos/
 
   fonts:
     - family: Roboto

@@ -201,8 +201,8 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                                      ),
-                                    ),
+                          ),
+                          ),
                         ],
                       ),
                     ),
@@ -1184,12 +1184,14 @@ Column _prime() {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    highlight[0].name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20,
+                  Container(
+                    height: 100,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(highlight[0].logo),
+                        fit: BoxFit.cover
+                      ),
                     ),
                   ),
                   Text(
