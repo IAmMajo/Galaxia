@@ -1,15 +1,13 @@
-import 'dart:js_util';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {
-   final Function(bool) onLoginSuccess;
-  const OnBoardingScreen({required this.onLoginSuccess, Key? key});
+  final Function(bool) onLoginSuccess;
+  const OnBoardingScreen({super.key, required this.onLoginSuccess, Key? key});
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }
-
 
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final int numPages = 5;
@@ -21,58 +19,56 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   TextEditingController passwordController = TextEditingController();
   TextEditingController passworRepeatController = TextEditingController();
 
-
   List<Widget> buildPageIndicator() {
     List<Widget> list = [];
-    for(int i = 0; i < numPages ; i++){
+    for (int i = 0; i < numPages; i++) {
       list.add(i == currPage ? indicator(true) : indicator(false));
     }
     return list;
   }
 
-
-
-  Widget indicator(bool isActive){
+  Widget indicator(bool isActive) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 150),
-      margin: EdgeInsets.symmetric(horizontal: 8.0),
+      duration: const Duration(milliseconds: 150),
+      margin: const EdgeInsets.symmetric(horizontal: 8.0),
       height: 8.0,
       width: isActive ? 24.0 : 16.0,
       decoration: BoxDecoration(
-        color: isActive ? Colors.white : Color(0xFF7B51D3),
-        borderRadius: BorderRadius.all(Radius.circular(12)),
+        color: isActive ? Colors.white : const Color(0xFF7B51D3),
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.1,0.4,0.7,0.9],
-            colors: [
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: [
+              0.1,
+              0.4,
+              0.7,
+              0.9
+            ],
+                colors: [
               Color.fromARGB(255, 50, 50, 50),
               Color.fromARGB(255, 49, 49, 49),
               Color.fromARGB(255, 46, 46, 46),
               Color.fromARGB(255, 28, 28, 28)
-            ]
-          )
-        ),
+            ])),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget> [
-            Container(
+          children: <Widget>[
+            SizedBox(
               height: 600.0,
               child: PageView(
-                physics: ClampingScrollPhysics(),
+                physics: const ClampingScrollPhysics(),
                 controller: pageController,
-                onPageChanged: (int page){
+                onPageChanged: (int page) {
                   setState(() {
                     currPage = page;
                   });
@@ -82,17 +78,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:<Widget> [
-                        Center(
+                      children: <Widget>[
+                        const Center(
                           child: Image(
-                            image: AssetImage("assets/TVAbendIlu.png",
+                            image: AssetImage(
+                              "assets/TVAbendIlu.png",
                             ),
                             height: 300.0,
                             width: 300.0,
                           ),
                         ),
-                        SizedBox(height: 30.0,),
-                        Center(
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        const Center(
                           child: Text(
                             'Mit',
                             style: TextStyle(
@@ -109,7 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.blue,
                             ),
-                            child: Text(
+                            child: const Text(
                               "GALAXIA",
                               style: TextStyle(
                                 color: Colors.white,
@@ -119,9 +118,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ),
                           ),
                         ),
-                        Center(
-                          child: Text('Zu deinem TV-Abend!',
-                          style: TextStyle(
+                        const Center(
+                          child: Text(
+                            'Zu deinem TV-Abend!',
+                            style: TextStyle(
                               color: Colors.grey,
                               fontSize: 21,
                               fontWeight: FontWeight.w400,
@@ -131,22 +131,24 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ],
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:<Widget> [
-                        Center(
+                      children: <Widget>[
+                        const Center(
                           child: Image(
-                            image: AssetImage("assets/TVAbendIlu.png",
+                            image: AssetImage(
+                              "assets/TVAbendIlu.png",
                             ),
                             height: 300.0,
                             width: 300.0,
                           ),
                         ),
-                        SizedBox(height: 30.0,),
-                        Center(
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        const Center(
                           child: Text(
                             'Behalte alle Inhalte',
                             style: TextStyle(
@@ -163,7 +165,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.blue,
                             ),
-                            child: Text(
+                            child: const Text(
                               "KOMBINIERT",
                               style: TextStyle(
                                 color: Colors.white,
@@ -173,9 +175,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ),
                           ),
                         ),
-                        Center(
-                          child: Text('in einer App!',
-                          style: TextStyle(
+                        const Center(
+                          child: Text(
+                            'in einer App!',
+                            style: TextStyle(
                               color: Colors.grey,
                               fontSize: 21,
                               fontWeight: FontWeight.w400,
@@ -189,17 +192,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:<Widget> [
-                        Center(
+                      children: <Widget>[
+                        const Center(
                           child: Image(
-                            image: AssetImage("assets/WochenhighlightIlu.png",
+                            image: AssetImage(
+                              "assets/WochenhighlightIlu.png",
                             ),
                             height: 300.0,
                             width: 300.0,
                           ),
                         ),
-                        SizedBox(height: 30.0,),
-                        Center(
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        const Center(
                           child: Text(
                             'Lass dich von unserem',
                             style: TextStyle(
@@ -216,7 +222,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.blue,
                             ),
-                            child: Text(
+                            child: const Text(
                               "WOCHENHIGHLIGHT",
                               style: TextStyle(
                                 color: Colors.white,
@@ -226,9 +232,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ),
                           ),
                         ),
-                        Center(
-                          child: Text('inspirieren',
-                          style: TextStyle(
+                        const Center(
+                          child: Text(
+                            'inspirieren',
+                            style: TextStyle(
                               color: Colors.grey,
                               fontSize: 21,
                               fontWeight: FontWeight.w400,
@@ -242,17 +249,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:<Widget> [
-                        Center(
+                      children: <Widget>[
+                        const Center(
                           child: Image(
-                            image: AssetImage("assets/ListCreateIlu.png",
+                            image: AssetImage(
+                              "assets/ListCreateIlu.png",
                             ),
                             height: 300.0,
                             width: 300.0,
                           ),
                         ),
-                        SizedBox(height: 30.0,),
-                        Center(
+                        const SizedBox(
+                          height: 30.0,
+                        ),
+                        const Center(
                           child: Text(
                             'Ordne und erstelle',
                             style: TextStyle(
@@ -269,7 +279,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               borderRadius: BorderRadius.circular(10),
                               color: Colors.blue,
                             ),
-                            child: Text(
+                            child: const Text(
                               "LISTEN",
                               style: TextStyle(
                                 color: Colors.white,
@@ -279,9 +289,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             ),
                           ),
                         ),
-                        Center(
-                          child: Text('wie es dir gefällt!',
-                          style: TextStyle(
+                        const Center(
+                          child: Text(
+                            'wie es dir gefällt!',
+                            style: TextStyle(
                               color: Colors.grey,
                               fontSize: 21,
                               fontWeight: FontWeight.w400,
@@ -291,27 +302,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       ],
                     ),
                   ),
-                   Padding(
+                  Padding(
                     padding: const EdgeInsets.all(40.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:<Widget> [
-                       Text('Beginnen wir mit dem Sign-In!',
-                       style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 21,
-                       ),
-                       ),
-
-                       _signinForm(context),
+                      children: <Widget>[
+                        const Text(
+                          'Beginnen wir mit dem Sign-In!',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 21,
+                          ),
+                        ),
+                        _signinForm(context),
                       ],
                     ),
                   ),
                 ],
               ),
             ),
-
             Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -418,4 +428,4 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       ),
     );
   }
-  }
+}

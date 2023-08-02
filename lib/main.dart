@@ -38,7 +38,7 @@ Future<void> main() async {
   FirebaseAuth.instance.authStateChanges().listen((User? user) {
     bool isLoggedIn = user != null;
     print("User is ${isLoggedIn ? 'signed in' : 'not signed in'}!");
-    runApp(StreamflixApp());
+    runApp(const StreamflixApp());
   });
 }
 
@@ -68,7 +68,8 @@ class _StreamflixAppState extends State<StreamflixApp> {
                 : OnBoardingScreen(onLoginSuccess: updateLoginStatus);
           } else {
             // Show a loading screen or other UI while waiting for the auth state to be determined
-            return Scaffold(body: Center(child: CircularProgressIndicator()));
+            return const Scaffold(
+                body: Center(child: CircularProgressIndicator()));
           }
         },
       ),
