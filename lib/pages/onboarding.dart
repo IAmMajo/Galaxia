@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   final Function(bool) onLoginSuccess;
-  const OnBoardingScreen({super.key, required this.onLoginSuccess, Key? key});
+  const OnBoardingScreen({required this.onLoginSuccess, Key? key})
+      : super(key: key);
 
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
