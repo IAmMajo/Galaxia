@@ -168,42 +168,40 @@ class _HomePageState extends State<HomePage> {
                                         thickness: 1,
                                       ),
                                     ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Text(neuheiten[index].platform,
-                                style: TextStyle(
-                                  color: Colors.white
+                                  ],
                                 ),
+                              ),
+                              Container(
+                                child: Row(children: [
+                                  Text(
+                                    neuheiten[index].platform,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ]),
+                              ),
+                              Container(
+                                child: Text(
+                                  neuheiten[index].des,
+                                  style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
                                 ),
-                              ]),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
                           ),
-                          Container(
-                            child: Text(neuheiten[index].des,
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 13
-                            ),
-                            ),
-                          ),
-                          Center(
-                           child: ElevatedButton(
-                          child: const Text('close'),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          ),
-                          ),
-                        ],
-                      ),
-                    ),
-              );
-            },
-          );
+                        ),
+                      );
+                    },
+                  );
                 },
                 child: Container(
                   width: 110,
@@ -1188,9 +1186,8 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(highlight[0].logo),
-                        fit: BoxFit.cover
-                      ),
+                          image: AssetImage(highlight[0].logo),
+                          fit: BoxFit.cover),
                     ),
                   ),
                   Text(
