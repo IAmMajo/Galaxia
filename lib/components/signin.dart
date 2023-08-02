@@ -159,14 +159,21 @@ GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
 
 Future<void> _handleGoogleSignIn(BuildContext context) async {
   try {
-    await _googleSignIn.signIn();
+    GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+    GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
+    AuthCredential credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+    FirebaseAuth.instance.signInWithCredential(credential);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(_googleSignIn.currentUser.toString())),
+      SnackBar(
+          content: Text("Logged in as:${FirebaseAuth.instance.currentUser}")),
     );
   } catch (error) {
     print(error);
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(error.toString())),
+      const SnackBar(content: Text('Something went wrong please try again')),
     );
   }
 }
