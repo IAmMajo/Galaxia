@@ -138,11 +138,10 @@ class _HomePageState extends State<HomePage> {
                                 height: 100,
                                 width: 250,
                                 decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(neuheiten[index].logo),
-                                    fit: BoxFit.contain
-                                  )
-                                ),
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage(neuheiten[index].logo),
+                                        fit: BoxFit.contain)),
                               ),
                               Container(
                                 child: Row(
@@ -691,7 +690,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 90,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(disneyNeuheiten[index].logo),
+                                    image:
+                                        AssetImage(disneyNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -898,7 +898,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 90,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(primeNeuheiten[index].logo),
+                                    image:
+                                        AssetImage(primeNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1105,7 +1106,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 90,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(netflixNeuheiten[index].logo),
+                                    image: AssetImage(
+                                        netflixNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
