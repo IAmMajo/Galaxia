@@ -25,7 +25,7 @@ class NeuheitenModel {
           genre: 'Horror',
           des:
               '"Stranger Things ist eine mitreißende Science-Fiction-Mysteryserie, die in den 1980er Jahren spielt. Die Handlung konzentriert sich auf eine Gruppe von Kindern in der Kleinstadt Hawkins, als einer ihrer Freunde plötzlich verschwindet. Als sie nach ihm suchen, treffen sie auf ein mysteriöses Mädchen mit telekinetischen Fähigkeiten und stolpern in eine düstere Parallelwelt, genannt "das Upside Down". Die Serie kombiniert Elemente aus Horror, Abenteuer und Drama und beeindruckt durch nostalgische Referenzen, spannende Handlungsstränge und sympathische Charaktere. "Stranger Things" hat eine breite Fangemeinde gewonnen und gilt als Kultserie der Streaming-Ära.',
-          image: "assets/StrangerThings.jpg",
+          image: "assets/series/StrangerThings.jpg",
           platform: "Netflix"),
     );
 
