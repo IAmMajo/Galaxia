@@ -175,7 +175,8 @@ ButtonBar externalSigninButtons(BuildContext context) {
   return ButtonBar(
     children: [
       ElevatedButton(
-          onPressed: () => _handleGoogleSignIn(context), child: Text("Google"))
+          onPressed: () => _handleGoogleSignIn(context),
+          child: const Text("Google"))
     ],
   );
 }
