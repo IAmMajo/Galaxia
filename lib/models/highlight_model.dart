@@ -23,6 +23,13 @@ class HighlightModel {
         image: "assets/series/The100.jpg",
         platform: 'Prime'));
 
+        highlight.add(HighlightModel(
+        name: 'Game of Thrones',
+        logo: "assets/logos/GameofThronesLogo.webp",
+        genre: 'Middleage | Fantasy',
+        image: "assets/series/GameofThrones.jpg",
+        platform: 'Sky'));
+
     return highlight;
   }
 }
