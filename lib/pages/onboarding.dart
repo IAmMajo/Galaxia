@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:streamflix/components/login.dart';
 import 'package:streamflix/models/highlight_model.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -17,11 +17,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final int numPages = 5;
   final PageController pageController = PageController(initialPage: 0);
   int currPage = 0;
-
-  final _formKeySignin = GlobalKey<FormState>();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController passworRepeatController = TextEditingController();
 
   List<Widget> buildPageIndicator() {
     List<Widget> list = [];
@@ -309,22 +304,22 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(40.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            const Text(
-                              'Beginnen wir mit dem Sign-In!',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 21,
-                              ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: const <Widget>[
+                          Text(
+                            'Beginnen wir mit dem Sign-In!',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 21,
                             ),
-                            _signinForm(context),
-                          ],
-                        ),
+                          ),
+                          Expanded(
+                            child: Login(),
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -337,102 +332,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Form _signinForm(BuildContext context) {
-    BuildContext buildContext = context;
-    return Form(
-      key: _formKeySignin,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextFormField(
-                controller: emailController,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Email"),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your email';
-                  } else if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                      .hasMatch(value)) {
-                    return 'Please enter a real email';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextFormField(
-                controller: passwordController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Password"),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a password';
-                  } else if (!RegExp(r'([^\s]){8,}').hasMatch(value)) {
-                    return 'Password contains illegal characters or is not long enough';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextFormField(
-                controller: passworRepeatController,
-                obscureText: true,
-                decoration: const InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Repeat Password"),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please repeat your password';
-                  } else if (value != passwordController.value.text) {
-                    return 'Passwords do not match';
-                  }
-                  return null;
-                },
-              ),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8, vertical: 16.0),
-              child: Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_formKeySignin.currentState!.validate()) {
-                      FirebaseAuth.instance
-                          .createUserWithEmailAndPassword(
-                              email: emailController.value.text,
-                              password: passwordController.value.text)
-                          .then((value) => () async {
-                                print("user created");
-                                return value;
-                              })
-                          .onError((error, stackTrace) {
-                        print("error: $error");
-                        widget.onLoginSuccess(true);
-                        return Future.value();
-                      });
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Please fill input')),
-                      );
-                    }
-                  },
-                  child: const Text('Submit'),
-                ),
-              ),
-            ),
-          ],
         ),
       ),
     );

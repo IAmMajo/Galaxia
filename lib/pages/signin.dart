@@ -1,15 +1,12 @@
-import 'dart:ui';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:streamflix/models/highlight_model.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:streamflix/components/logout.dart';
 
 class Signin extends StatefulWidget {
   const Signin({super.key});
   @override
-  State<StatefulWidget> createState() => _SigninState();
+  State<Signin> createState() => _SigninState();
 }
 
 class _SigninState extends State<Signin> {
@@ -27,37 +24,11 @@ class _SigninState extends State<Signin> {
   Widget build(BuildContext context) {
     getHighlight();
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage(highlight[0].image),
-          fit: BoxFit.cover,
-        )),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-          child: Container(
-            color: Colors.black.withOpacity(0.7),
-            child: ListView(
-              children: [
-                appBar(),
-                _signinForm(context),
-                externalSigninButtons(context),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  AppBar appBar() {
-    return AppBar(
-      title: const Text("Signin"),
+      body: _signinForm(context),
     );
   }
 
   Form _signinForm(BuildContext context) {
-    BuildContext buildContext = context;
     return Form(
       key: _formKeySignin,
       child: Padding(
@@ -129,10 +100,12 @@ class _SigninState extends State<Signin> {
                               password: passwordController.value.text)
                           .then((value) => () async {
                                 print("user created");
+                                Navigator.pop(context);
                                 return value;
                               })
                           .onError((error, stackTrace) {
                         print("error: $error");
+
                         return Future.value();
                       });
                     } else {
@@ -145,7 +118,17 @@ class _SigninState extends State<Signin> {
                 ),
               ),
             ),
-            const Logout(),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 16.0),
+              child: Center(
+                child: ElevatedButton(
+                  onPressed: () => {Navigator.pop(context)},
+                  child: const Text('Back'),
+                ),
+              ),
+            ),
+            externalSigninButtons(context),
           ],
         ),
       ),
