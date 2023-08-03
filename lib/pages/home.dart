@@ -117,6 +117,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
+                    backgroundColor: Colors.black.withOpacity(0.8),
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
@@ -125,14 +126,34 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Container(
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(neuheiten[index].image),
-                                      fit: BoxFit.cover),
-                                ),
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              neuheiten[index].image),
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
+                                ],
                               ),
                               Container(
                                 height: 100,
@@ -178,6 +199,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Container(
                                       height: 50,
+                                      width: 60,
                                       decoration: BoxDecoration(
                                         image: DecorationImage(
                                           image: AssetImage(
@@ -392,6 +414,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
+                    backgroundColor: Colors.black.withOpacity(0.8),
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
@@ -400,31 +423,50 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Container(
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      meineListe[index].image,
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              meineListe[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    fit: BoxFit.cover,
                                   ),
-                                ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
+                                ],
                               ),
                               Container(
-                                child: Text(
-                                  meineListe[index].name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                height: 100,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage(meineListe[index].logo),
+                                        fit: BoxFit.contain)),
                               ),
                               Container(
                                 child: Row(
                                   children: const [
-                                    SizedBox(width: 10),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Expanded(
                                       flex: 1,
                                       child: Divider(
@@ -435,9 +477,7 @@ class _HomePageState extends State<HomePage> {
                                     SizedBox(width: 10),
                                     Text(
                                       'STREAMEN AUF',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                     SizedBox(width: 10),
                                     Expanded(
@@ -452,24 +492,73 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      meineListe[index].platform,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                    Container(
+                                      height: 50,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            meineListe[index].platform,
+                                          ),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 20),
                                 child: Text(
                                   meineListe[index].des,
+                                  textAlign: TextAlign.justify,
                                   style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 13,
-                                  ),
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Genre: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    Text(
+                                      neuheiten[index].genre,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Besetzung: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13,
+                                          color: Colors.grey),
+                                    ),
+                                    Text(
+                                      meineListe[index].actor,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Center(
@@ -494,7 +583,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Stack(
                     children: [
-                      // Hintergrundbild
                       Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -532,8 +620,8 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Center(
                               child: Container(
-                                height: 50,
-                                width: 90,
+                                height: 80,
+                                width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(meineListe[index].logo),
@@ -557,8 +645,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _disney() {
-    final disneyNeuheiten =
-        neuheiten.where((item) => item.platform == "Disney").toList();
+    final disneyNeuheiten = neuheiten
+        .where((item) => item.platform == "assets/DisneyLogo.png")
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -599,6 +688,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
+                    backgroundColor: Colors.black.withOpacity(0.8),
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
@@ -607,31 +697,50 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Container(
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      disneyNeuheiten[index].image,
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              disneyNeuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    fit: BoxFit.cover,
                                   ),
-                                ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
+                                ],
                               ),
                               Container(
-                                child: Text(
-                                  disneyNeuheiten[index].name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                height: 100,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            disneyNeuheiten[index].logo),
+                                        fit: BoxFit.contain)),
                               ),
                               Container(
                                 child: Row(
                                   children: const [
-                                    SizedBox(width: 10),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Expanded(
                                       flex: 1,
                                       child: Divider(
@@ -642,9 +751,7 @@ class _HomePageState extends State<HomePage> {
                                     SizedBox(width: 10),
                                     Text(
                                       'STREAMEN AUF',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                     SizedBox(width: 10),
                                     Expanded(
@@ -659,24 +766,73 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      disneyNeuheiten[index].platform,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                    Container(
+                                      height: 50,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            disneyNeuheiten[index].platform,
+                                          ),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 20),
                                 child: Text(
                                   disneyNeuheiten[index].des,
+                                  textAlign: TextAlign.justify,
                                   style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 13,
-                                  ),
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Genre: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    Text(
+                                      disneyNeuheiten[index].genre,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Besetzung: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13,
+                                          color: Colors.grey),
+                                    ),
+                                    Text(
+                                      disneyNeuheiten[index].actor,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Center(
@@ -701,7 +857,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Stack(
                     children: [
-                      // Hintergrundbild
                       Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -739,8 +894,8 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Center(
                               child: Container(
-                                height: 50,
-                                width: 90,
+                                height: 80,
+                                width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image:
@@ -765,8 +920,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _prime() {
-    final primeNeuheiten =
-        neuheiten.where((item) => item.platform == "Prime").toList();
+    final primeNeuheiten = neuheiten
+        .where((item) => item.platform == "assets/PrimeLogo.png")
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -807,6 +963,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
+                    backgroundColor: Colors.black.withOpacity(0.8),
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
@@ -815,31 +972,50 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Container(
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      primeNeuheiten[index].image,
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              primeNeuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    fit: BoxFit.cover,
                                   ),
-                                ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
+                                ],
                               ),
                               Container(
-                                child: Text(
-                                  primeNeuheiten[index].name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                height: 100,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            primeNeuheiten[index].logo),
+                                        fit: BoxFit.contain)),
                               ),
                               Container(
                                 child: Row(
                                   children: const [
-                                    SizedBox(width: 10),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Expanded(
                                       flex: 1,
                                       child: Divider(
@@ -850,9 +1026,7 @@ class _HomePageState extends State<HomePage> {
                                     SizedBox(width: 10),
                                     Text(
                                       'STREAMEN AUF',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                     SizedBox(width: 10),
                                     Expanded(
@@ -867,24 +1041,73 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      primeNeuheiten[index].platform,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                    Container(
+                                      height: 50,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            primeNeuheiten[index].platform,
+                                          ),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 20),
                                 child: Text(
                                   primeNeuheiten[index].des,
+                                  textAlign: TextAlign.justify,
                                   style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 13,
-                                  ),
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Genre: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    Text(
+                                      primeNeuheiten[index].genre,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Besetzung: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13,
+                                          color: Colors.grey),
+                                    ),
+                                    Text(
+                                      primeNeuheiten[index].actor,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Center(
@@ -909,7 +1132,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Stack(
                     children: [
-                      // Hintergrundbild
                       Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -947,8 +1169,8 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Center(
                               child: Container(
-                                height: 50,
-                                width: 90,
+                                height: 80,
+                                width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image:
@@ -973,8 +1195,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _netflix() {
-    final netflixNeuheiten =
-        neuheiten.where((item) => item.platform == "Netflix").toList();
+    final netflixNeuheiten = neuheiten
+        .where((item) => item.platform == "assets/NetflixLogo.webp")
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1015,6 +1238,7 @@ class _HomePageState extends State<HomePage> {
               return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
+                    backgroundColor: Colors.black.withOpacity(0.8),
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
@@ -1023,31 +1247,50 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Container(
-                                height: 300,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                      netflixNeuheiten[index].image,
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              netflixNeuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    fit: BoxFit.cover,
                                   ),
-                                ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
+                                ],
                               ),
                               Container(
-                                child: Text(
-                                  netflixNeuheiten[index].name,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
+                                height: 100,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            netflixNeuheiten[index].logo),
+                                        fit: BoxFit.contain)),
                               ),
                               Container(
                                 child: Row(
                                   children: const [
-                                    SizedBox(width: 10),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
                                     Expanded(
                                       flex: 1,
                                       child: Divider(
@@ -1058,9 +1301,7 @@ class _HomePageState extends State<HomePage> {
                                     SizedBox(width: 10),
                                     Text(
                                       'STREAMEN AUF',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
+                                      style: TextStyle(color: Colors.white),
                                     ),
                                     SizedBox(width: 10),
                                     Expanded(
@@ -1075,24 +1316,73 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(
-                                      netflixNeuheiten[index].platform,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                    Container(
+                                      height: 50,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            netflixNeuheiten[index].platform,
+                                          ),
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
                               Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 20),
                                 child: Text(
                                   netflixNeuheiten[index].des,
+                                  textAlign: TextAlign.justify,
                                   style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 13,
-                                  ),
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Genre: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    Text(
+                                      netflixNeuheiten[index].genre,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Besetzung: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13,
+                                          color: Colors.grey),
+                                    ),
+                                    Text(
+                                      netflixNeuheiten[index].actor,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Center(
@@ -1117,7 +1407,6 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Stack(
                     children: [
-                      // Hintergrundbild
                       Container(
                         width: double.infinity,
                         height: double.infinity,
@@ -1155,8 +1444,8 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Center(
                               child: Container(
-                                height: 50,
-                                width: 90,
+                                height: 80,
+                                width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
                                     image: AssetImage(

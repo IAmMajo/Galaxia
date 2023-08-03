@@ -41,7 +41,7 @@ class MeineListeModel {
           des:
               '"Game of Thrones" ist eine epische Fantasy-Serie, basierend auf den Romanen von George R.R. Martin. Die Handlung spielt in den sieben Königreichen von Westeros und folgt mehreren Adelsfamilien, die um den eisernen Thron kämpfen. Politische Intrigen, blutige Schlachten und überraschende Wendungen prägen die Serie. Die Charaktere sind vielschichtig und die Handlung voller unerwarteter Ereignisse. "Game of Thrones" beeindruckt durch seine visuelle Pracht, komplexe Erzählweise und tiefgreifende Weltentwicklung. Die Serie gilt als Meisterwerk der Fernsehunterhaltung und hat eine riesige Fangemeinde gewonnen.',
           image: "assets/series/GameofThrones.jpg",
-          platform: "Wow"),
+          platform: "assets/WOWLogo.png"),
     );
 
     meineListe.add(
