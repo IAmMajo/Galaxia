@@ -140,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image:
-                                        AssetImage(neuheiten[index].logo),
+                                            AssetImage(neuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -176,23 +176,23 @@ class _HomePageState extends State<HomePage> {
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                  Container(
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(neuheiten[index].platform,
-                                        
+                                    Container(
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            neuheiten[index].platform,
+                                          ),
+                                          fit: BoxFit.contain,
                                         ),
-                                        fit: BoxFit.contain,
-                                        
+                                      ),
                                     ),
-                                  ),
-                                  ),
                                   ],
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(top: 10, bottom: 20),
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 20),
                                 child: Text(
                                   neuheiten[index].des,
                                   textAlign: TextAlign.justify,
@@ -205,12 +205,12 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 child: Row(
                                   children: [
-                                    Text('Genre: ',
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 13
-                                    ),
+                                    const Text(
+                                      'Genre: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
                                     ),
                                     Text(
                                       neuheiten[index].genre,
@@ -225,15 +225,15 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 child: Row(
                                   children: [
-                                    Text('Besetzung: ',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 13,
-                                      color: Colors.grey
-                                    ),
+                                    const Text(
+                                      'Besetzung: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13,
+                                          color: Colors.grey),
                                     ),
                                     Text(
-                                     neuheiten[index].actor,
+                                      neuheiten[index].actor,
                                       style: const TextStyle(
                                           color: Colors.grey,
                                           fontWeight: FontWeight.w400,

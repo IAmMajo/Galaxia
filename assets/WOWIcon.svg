@@ -1,51 +1,48 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 200 200"
-   height="200mm"
-   width="200mm">
-  <defs
-     id="defs2" />
-  <metadata
-     id="metadata5">
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  id="svg8"
+  version="1.1"
+  viewBox="0 0 200 200"
+  height="200mm"
+  width="200mm"
+>
+  <defs id="defs2" />
+  <metadata id="metadata5">
     <rdf:RDF>
-      <cc:Work
-         rdf:about="">
+      <cc:Work rdf:about="">
         <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     transform="translate(167.82143,82.160707)"
-     id="layer1">
+  <g transform="translate(167.82143,82.160707)" id="layer1">
     <g
-       style="fill:#01575b;fill-opacity:1"
-       transform="matrix(1.0254532,0,0,1.0254532,4.271591,-2.9993847)"
-       id="g830">
+      style="fill:#01575b;fill-opacity:1"
+      transform="matrix(1.0254532,0,0,1.0254532,4.271591,-2.9993847)"
+      id="g830"
+    >
       <rect
-         style="opacity:1;fill:#01575b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-opacity:1;paint-order:markers fill stroke"
-         id="rect815"
-         width="195.03572"
-         height="195.03572"
-         x="-167.82143"
-         y="-77.196426"
-         ry="37.797619" />
+        style="opacity:1;fill:#01575b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:10;stroke-opacity:1;paint-order:markers fill stroke"
+        id="rect815"
+        width="195.03572"
+        height="195.03572"
+        x="-167.82143"
+        y="-77.196426"
+        ry="37.797619"
+      />
     </g>
     <image
-       width="189.59744"
-       height="95.590355"
-       preserveAspectRatio="none"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA74AAAHjCAYAAAAE8cMBAAAAAW9yTlQBz6J3mgAAgABJREFUeNrs
+      width="189.59744"
+      height="95.590355"
+      preserveAspectRatio="none"
+      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA74AAAHjCAYAAAAE8cMBAAAAAW9yTlQBz6J3mgAAgABJREFUeNrs
 /duW5DiuLQpOgDL3yKzae+3Roz+5X/tX+5yzVlVluJtE9AMIindRZuaXiDSOqgw3XUgQoihOTBAg
 EcGzPMuzPMuzPMuzPMuzPMuzPMuzPMvvWvirBXiWZ3mWZ3mWZ3mWZ3mWZ3mWZ3mWZ/nI8gS+z/Is
 z/Isz/Isz/Isz/Isz/Isz/JblyfwfZZneZZneZZneZZneZZneZZneZbfuiyPrIz+P//fr+7Ps4wK
@@ -4923,31 +4920,53 @@ KxdifoW36lZu5VZu5VZu5VZu5VZu5VZu5VZu5XdSbhbfW7mVW7mVW7mVW7mVW7mVW7mVW3nT5QZ8
 b+VWbuVWbuVWbuVWbuVWbuVWbuVNlxvwvZVbuZVbuZVbuZVbuZVbuZVbuZU3Xf5/Q1cZ7GD7MuEA
 AAAASUVORK5CYII=
 "
-       id="image866"
-       x="-162.62015"
-       y="-29.955883" />
+      id="image866"
+      x="-162.62015"
+      y="-29.955883"
+    />
   </g>
-  <style
-     type="text/css"
-     id="style826">
-	.st0{fill:#FFFFFF;}
-	.st1{fill:#333333;}
-</style>
-  <style
-     id="style4567"
-     type="text/css">
-	.st0{fill:#FE1251;}
-</style>
-  <style
-     id="style818"
-     type="text/css">
-	.st0{fill:#CCCCCB;}
-	.st1{fill:#B4B3B3;}
-	.st2{opacity:0.7;fill:#FFFFFF;}
-	.st3{opacity:0.75;fill:#FFFFFF;}
-	.st4{opacity:0.7;fill:#F7AF3D;}
-	.st5{opacity:0.7;fill:#C0272D;}
-	.st6{opacity:0.7;}
-	.st7{opacity:0.75;fill:#009345;}
-</style>
+  <style type="text/css" id="style826">
+.st0 {
+  fill: #ffffff;
+}
+.st1 {
+  fill: #333333;
+}
+  </style>
+  <style id="style4567" type="text/css">
+.st0 {
+  fill: #fe1251;
+}
+  </style>
+  <style id="style818" type="text/css">
+.st0 {
+  fill: #cccccb;
+}
+.st1 {
+  fill: #b4b3b3;
+}
+.st2 {
+  opacity: 0.7;
+  fill: #ffffff;
+}
+.st3 {
+  opacity: 0.75;
+  fill: #ffffff;
+}
+.st4 {
+  opacity: 0.7;
+  fill: #f7af3d;
+}
+.st5 {
+  opacity: 0.7;
+  fill: #c0272d;
+}
+.st6 {
+  opacity: 0.7;
+}
+.st7 {
+  opacity: 0.75;
+  fill: #009345;
+}
+  </style>
 </svg>
