@@ -129,34 +129,32 @@ class _HomePageState extends State<HomePage> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                Container(
-                                height: 300,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(neuheiten[index].image),
-                                      fit: BoxFit.cover),
-                                ),
-                              ),
-                                CircleAvatar(
-                                 radius: 26,
-                                  backgroundColor: Colors.black.withOpacity(0.5),
-                                  child: TextButton(
-                                    onPressed: () {
-
-                                    },
-                                    child: Text(' ▶',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              neuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    ),
-                                    )
                                   ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
                                 ],
                               ),
-                              
                               Container(
                                 height: 100,
                                 width: 250,
@@ -413,7 +411,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(left: 20, right: 20),
             separatorBuilder: (context, index) => const SizedBox(width: 25),
             itemBuilder: (context, index) {
-              return  GestureDetector(
+              return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
                     backgroundColor: Colors.black.withOpacity(0.8),
@@ -428,34 +426,32 @@ class _HomePageState extends State<HomePage> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                Container(
-                                height: 300,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(meineListe[index].image),
-                                      fit: BoxFit.cover),
-                                ),
-                              ),
-                                CircleAvatar(
-                                 radius: 26,
-                                  backgroundColor: Colors.black.withOpacity(0.5),
-                                  child: TextButton(
-                                    onPressed: () {
-
-                                    },
-                                    child: Text(' ▶',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              meineListe[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    ),
-                                    )
                                   ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
                                 ],
                               ),
-                              
                               Container(
                                 height: 100,
                                 width: 250,
@@ -649,8 +645,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _disney() {
-    final disneyNeuheiten =
-        neuheiten.where((item) => item.platform == "assets/DisneyLogo.png").toList();
+    final disneyNeuheiten = neuheiten
+        .where((item) => item.platform == "assets/DisneyLogo.png")
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -688,7 +685,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(left: 20, right: 20),
             separatorBuilder: (context, index) => const SizedBox(width: 20),
             itemBuilder: (context, index) {
-              return  GestureDetector(
+              return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
                     backgroundColor: Colors.black.withOpacity(0.8),
@@ -703,41 +700,39 @@ class _HomePageState extends State<HomePage> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                Container(
-                                height: 300,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(disneyNeuheiten[index].image),
-                                      fit: BoxFit.cover),
-                                ),
-                              ),
-                                CircleAvatar(
-                                 radius: 26,
-                                  backgroundColor: Colors.black.withOpacity(0.5),
-                                  child: TextButton(
-                                    onPressed: () {
-
-                                    },
-                                    child: Text(' ▶',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              disneyNeuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    ),
-                                    )
                                   ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
                                 ],
                               ),
-                              
                               Container(
                                 height: 100,
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image:
-                                            AssetImage(disneyNeuheiten[index].logo),
+                                        image: AssetImage(
+                                            disneyNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -903,7 +898,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(disneyNeuheiten[index].logo),
+                                    image:
+                                        AssetImage(disneyNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -924,8 +920,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _prime() {
-    final primeNeuheiten =
-        neuheiten.where((item) => item.platform == "assets/PrimeLogo.png").toList();
+    final primeNeuheiten = neuheiten
+        .where((item) => item.platform == "assets/PrimeLogo.png")
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -963,7 +960,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(left: 20, right: 20),
             separatorBuilder: (context, index) => const SizedBox(width: 20),
             itemBuilder: (context, index) {
-              return  GestureDetector(
+              return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
                     backgroundColor: Colors.black.withOpacity(0.8),
@@ -978,41 +975,39 @@ class _HomePageState extends State<HomePage> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                Container(
-                                height: 300,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(primeNeuheiten[index].image),
-                                      fit: BoxFit.cover),
-                                ),
-                              ),
-                                CircleAvatar(
-                                 radius: 26,
-                                  backgroundColor: Colors.black.withOpacity(0.5),
-                                  child: TextButton(
-                                    onPressed: () {
-
-                                    },
-                                    child: Text(' ▶',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              primeNeuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    ),
-                                    )
                                   ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
                                 ],
                               ),
-                              
                               Container(
                                 height: 100,
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image:
-                                            AssetImage(primeNeuheiten[index].logo),
+                                        image: AssetImage(
+                                            primeNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1178,7 +1173,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(primeNeuheiten[index].logo),
+                                    image:
+                                        AssetImage(primeNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1199,8 +1195,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   Column _netflix() {
-    final netflixNeuheiten =
-        neuheiten.where((item) => item.platform == "assets/NetflixLogo.webp").toList();
+    final netflixNeuheiten = neuheiten
+        .where((item) => item.platform == "assets/NetflixLogo.webp")
+        .toList();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1238,7 +1235,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.only(left: 20, right: 20),
             separatorBuilder: (context, index) => const SizedBox(width: 20),
             itemBuilder: (context, index) {
-              return  GestureDetector(
+              return GestureDetector(
                 onTap: () {
                   showModalBottomSheet<dynamic>(
                     backgroundColor: Colors.black.withOpacity(0.8),
@@ -1253,41 +1250,39 @@ class _HomePageState extends State<HomePage> {
                               Stack(
                                 alignment: Alignment.center,
                                 children: [
-                                Container(
-                                height: 300,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  image: DecorationImage(
-                                      image: AssetImage(netflixNeuheiten[index].image),
-                                      fit: BoxFit.cover),
-                                ),
-                              ),
-                                CircleAvatar(
-                                 radius: 26,
-                                  backgroundColor: Colors.black.withOpacity(0.5),
-                                  child: TextButton(
-                                    onPressed: () {
-
-                                    },
-                                    child: Text(' ▶',
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      color: Colors.white
+                                  Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              netflixNeuheiten[index].image),
+                                          fit: BoxFit.cover),
                                     ),
-                                    ),
-                                    )
                                   ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
                                 ],
                               ),
-                              
                               Container(
                                 height: 100,
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image:
-                                            AssetImage(netflixNeuheiten[index].logo),
+                                        image: AssetImage(
+                                            netflixNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1453,7 +1448,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(netflixNeuheiten[index].logo),
+                                    image: AssetImage(
+                                        netflixNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
