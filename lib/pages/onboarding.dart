@@ -69,7 +69,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 SizedBox(
-                  height: 800.0,
+                  height: 700.0,
                   child: PageView(
                     physics: const ClampingScrollPhysics(),
                     controller: pageController,
@@ -118,7 +118,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 28,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -175,7 +175,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 28,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -232,7 +232,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 28,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
@@ -289,7 +289,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 28,
+                                    fontSize: 26,
                                   ),
                                 ),
                               ),
