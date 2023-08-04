@@ -141,9 +141,9 @@ class SoonPage extends StatelessWidget {
                                         image: DecorationImage(
                                             image: AssetImage(
                                                 '${soonentries[index].fsk}.png')
-                                                )
                                                 ),
-                                  ),
+                                                ),
+                                               ),
                                             ],
                                             ),
                                           
