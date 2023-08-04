@@ -215,43 +215,40 @@ class _HomePageState extends State<HomePage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                          TextButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                              Colors.black.withOpacity(0.5),
-                            ),
-                            overlayColor: MaterialStateProperty.all<Color>(
-                              Colors.white.withOpacity(0.1),
-                            ),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                            ),
-                          ),
-                          onPressed: () {},
-                          child: const Text(
-                            '+ Merken',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        
-                        Container(
-                          height: 25,
-                          width: 25,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(
-                               neuheiten[index].fsk + '.png'
-                              )
-                            )
-                          ),
-                        )
-
-
+                                  TextButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.black.withOpacity(0.5),
+                                      ),
+                                      overlayColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.white.withOpacity(0.1),
+                                      ),
+                                      shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                    ),
+                                    onPressed: () {},
+                                    child: const Text(
+                                      '+ Merken',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 25,
+                                    width: 25,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                '${neuheiten[index].fsk}.png'))),
+                                  )
                                 ],
-                                ),
+                              ),
                               Container(
                                 margin:
                                     const EdgeInsets.only(top: 10, bottom: 20),
