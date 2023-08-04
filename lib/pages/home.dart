@@ -1754,7 +1754,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           onPressed: () {},
                           child: const Text(
-                            '+ Liste hinzufügen',
+                            '+ Merken',
                             style: TextStyle(color: Colors.white),
                           ),
                         ),
