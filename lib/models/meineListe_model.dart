@@ -26,7 +26,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'Spider-Man',
           genre: 'MARVEL',
-          fsk: 'FSK12',
+          fsk: 'assets/FSK12',
           actor: 'Tom Holland, Andrew Garfield, Tobey Maguire',
           logo: "assets/logos/SpiderManNoWayHomeLogo.png",
           des:
@@ -39,7 +39,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'Game of Thrones',
           genre: 'Mittelalter',
-          fsk: 'FSK18',
+          fsk: 'assets/FSK18',
           actor: 'Emilia Clark, Sophie Turner, Maisie Williams',
           logo: "assets/logos/GameofThronesLogo.png",
           des:
@@ -52,7 +52,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'König der Löwen',
           genre: 'Disney',
-          fsk: 'FSK6',
+          fsk: 'assets/FSK6',
           actor: 'Donald Glover, Beyoncé, James Earl Jones',
           logo: "assets/logos/TheLionKingLogo.png",
           des:
