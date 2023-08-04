@@ -68,72 +68,270 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildNeuheitenItem(NeuheitenModel item) {
-    return Container(
-      width: 110,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Stack(
-        children: [
-          // Hintergrundbild
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(item.image),
-                fit: BoxFit.cover,
-              ),
-              borderRadius: BorderRadius.circular(16),
-            ),
-          ),
-          // Schwarzer transparenter Gradient
-          Container(
-            width: double.infinity,
-            height: double.infinity,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.transparent,
-                  Colors.black.withOpacity(0.7),
-                ],
-              ),
-            ),
-          ),
-          // Texte
-          Positioned(
-            left: 8,
-            bottom: 8,
-            right: 8,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  item.name,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 14,
+    return GestureDetector(
+                onTap: () {
+                  showModalBottomSheet<dynamic>(
+                    backgroundColor: Colors.black.withOpacity(0.8),
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Container(
+                                    height: 250,
+                                    width: double.infinity,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              item.image),
+                                          fit: BoxFit.cover),
+                                    ),
+                                  ),
+                                  CircleAvatar(
+                                      radius: 26,
+                                      backgroundColor:
+                                          Colors.black.withOpacity(0.5),
+                                      child: TextButton(
+                                        onPressed: () {},
+                                        child: const Text(
+                                          ' ▶',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.white),
+                                        ),
+                                      )),
+                                ],
+                              ),
+                              Container(
+                                height: 100,
+                                width: 250,
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image:
+                                            AssetImage(item.logo),
+                                        fit: BoxFit.contain)),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: const [
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'STREAMEN AUF',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Divider(
+                                        color: Colors.white,
+                                        thickness: 1,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 50,
+                                      width: 60,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                            item.platform,
+                                          ),
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  TextButton(
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.black.withOpacity(0.5),
+                                      ),
+                                      overlayColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.white.withOpacity(0.1),
+                                      ),
+                                      shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                    ),
+                                    onPressed: () {},
+                                    child: const Text(
+                                      '+ Merken',
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 25,
+                                    width: 25,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                '${item.fsk}.png'))),
+                                  )
+                                ],
+                              ),
+                              Container(
+                                margin:
+                                    const EdgeInsets.only(top: 10, bottom: 20),
+                                child: Text(
+                                  item.des,
+                                  textAlign: TextAlign.justify,
+                                  style: const TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 13),
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Genre: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13),
+                                    ),
+                                    Text(
+                                      item.genre,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                child: Row(
+                                  children: [
+                                    const Text(
+                                      'Besetzung: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 13,
+                                          color: Colors.grey),
+                                    ),
+                                    Text(
+                                      item.actor,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Center(
+                                child: ElevatedButton(
+                                  child: const Text('close'),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  width: 110,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(item.image),
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.transparent,
+                              Colors.black.withOpacity(0.7),
+                            ],
+                          ),
+                        ),
+                      ),
+                      // Texte
+                      Positioned(
+                        left: 8,
+                        bottom: 8,
+                        right: 8,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Center(
+                              child: Container(
+                                height: 80,
+                                width: 110,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        item.logo),
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text(
-                  item.genre,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w300,
-                    fontSize: 12,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+              );
   }
 
   void searchNeuheiten(String query) {
