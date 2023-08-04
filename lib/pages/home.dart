@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> {
             color: Colors.black.withOpacity(0.7),
             child: ListView(
               children: [
-                appBar(),
                 _dailyHighlight(),
                 _TagCloud(),
                 const SizedBox(
@@ -1769,44 +1768,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  AppBar appBar() {
-    return AppBar(
-      title: const Text(
-        'Home',
-        style: TextStyle(
-            color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-      ),
-      backgroundColor: Colors.transparent,
-      elevation: 0.0,
-      centerTitle: true,
-      leading: GestureDetector(
-        onTap: () {},
-        child: Container(
-          margin: const EdgeInsets.all(10),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(10)),
-        ),
-      ),
-      actions: [
-        GestureDetector(
-          onTap: () {},
-          child: Container(
-            margin: const EdgeInsets.all(10),
-            width: 50,
-            height: 50,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage("assets/PB.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
   }
-}
