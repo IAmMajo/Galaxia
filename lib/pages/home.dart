@@ -458,7 +458,7 @@ class _HomePageState extends State<HomePage> {
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
-                      return SizedBox(
+                      return SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -467,7 +467,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   Container(
-                                    height: 200,
+                                    height: 250,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
@@ -549,6 +549,46 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                          TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Merken',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        
+                        Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                               meineListe[index].fsk + '.png'
+                              )
+                            )
+                          ),
+                        )
+
+
+                                ],
+                                ),
                               Container(
                                 margin:
                                     const EdgeInsets.only(top: 10, bottom: 20),
@@ -572,7 +612,7 @@ class _HomePageState extends State<HomePage> {
                                           fontSize: 13),
                                     ),
                                     Text(
-                                      neuheiten[index].genre,
+                                      meineListe[index].genre,
                                       style: const TextStyle(
                                           color: Colors.grey,
                                           fontWeight: FontWeight.w400,
@@ -732,7 +772,7 @@ class _HomePageState extends State<HomePage> {
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
-                      return SizedBox(
+                      return SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -741,7 +781,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   Container(
-                                    height: 300,
+                                    height: 250,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
@@ -771,8 +811,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(
-                                            disneyNeuheiten[index].logo),
+                                        image:
+                                            AssetImage(disneyNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -823,6 +863,46 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                          TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Merken',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        
+                        Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                               disneyNeuheiten[index].fsk + '.png'
+                              )
+                            )
+                          ),
+                        )
+
+
+                                ],
+                                ),
                               Container(
                                 margin:
                                     const EdgeInsets.only(top: 10, bottom: 20),
@@ -938,8 +1018,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image:
-                                        AssetImage(disneyNeuheiten[index].logo),
+                                    image: AssetImage(disneyNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1007,7 +1086,7 @@ class _HomePageState extends State<HomePage> {
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
-                      return SizedBox(
+                      return SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -1016,7 +1095,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   Container(
-                                    height: 300,
+                                    height: 250,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
@@ -1046,8 +1125,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(
-                                            primeNeuheiten[index].logo),
+                                        image:
+                                            AssetImage(primeNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1098,6 +1177,46 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                          TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Merken',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        
+                        Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                               primeNeuheiten[index].fsk + '.png'
+                              )
+                            )
+                          ),
+                        )
+
+
+                                ],
+                                ),
                               Container(
                                 margin:
                                     const EdgeInsets.only(top: 10, bottom: 20),
@@ -1213,8 +1332,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image:
-                                        AssetImage(primeNeuheiten[index].logo),
+                                    image: AssetImage(primeNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1282,7 +1400,7 @@ class _HomePageState extends State<HomePage> {
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
-                      return SizedBox(
+                      return SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -1291,7 +1409,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   Container(
-                                    height: 300,
+                                    height: 250,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
@@ -1321,8 +1439,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(
-                                            netflixNeuheiten[index].logo),
+                                        image:
+                                            AssetImage(neuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1373,6 +1491,46 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                          TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Merken',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        
+                        Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                               netflixNeuheiten[index].fsk + '.png'
+                              )
+                            )
+                          ),
+                        )
+
+
+                                ],
+                                ),
                               Container(
                                 margin:
                                     const EdgeInsets.only(top: 10, bottom: 20),
@@ -1416,7 +1574,7 @@ class _HomePageState extends State<HomePage> {
                                           color: Colors.grey),
                                     ),
                                     Text(
-                                      netflixNeuheiten[index].actor,
+                                      neuheiten[index].actor,
                                       style: const TextStyle(
                                           color: Colors.grey,
                                           fontWeight: FontWeight.w400,
@@ -1488,8 +1646,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(
-                                        netflixNeuheiten[index].logo),
+                                    image: AssetImage(netflixNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),

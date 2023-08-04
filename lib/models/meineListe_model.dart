@@ -2,6 +2,7 @@ class MeineListeModel {
   String name;
   String logo;
   String genre;
+  String fsk;
   String actor;
   String des;
   String image;
@@ -12,6 +13,7 @@ class MeineListeModel {
     required this.logo,
     required this.genre,
     required this.actor,
+    required this.fsk,
     required this.des,
     required this.image,
     required this.platform,
@@ -24,6 +26,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'Spider-Man',
           genre: 'MARVEL',
+          fsk: 'FSK12',
           actor: 'Tom Holland, Andrew Garfield, Tobey Maguire',
           logo: "assets/logos/SpiderManNoWayHomeLogo.png",
           des:
@@ -36,6 +39,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'Game of Thrones',
           genre: 'Mittelalter',
+          fsk: 'FSK18',
           actor: 'Emilia Clark, Sophie Turner, Maisie Williams',
           logo: "assets/logos/GameofThronesLogo.png",
           des:
@@ -48,6 +52,7 @@ class MeineListeModel {
       MeineListeModel(
           name: 'König der Löwen',
           genre: 'Disney',
+          fsk: 'FSK6',
           actor: 'Donald Glover, Beyoncé, James Earl Jones',
           logo: "assets/logos/TheLionKingLogo.png",
           des:
