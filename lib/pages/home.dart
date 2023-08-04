@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
                     isScrollControlled: true,
                     context: context,
                     builder: (BuildContext context) {
-                      return SizedBox(
+                      return SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   Container(
-                                    height: 300,
+                                    height: 250,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
@@ -212,6 +212,46 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                          TextButton(
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black.withOpacity(0.5),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              Colors.white.withOpacity(0.1),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text(
+                            '+ Merken',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        
+                        Container(
+                          height: 25,
+                          width: 25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                               neuheiten[index].fsk + '.png'
+                              )
+                            )
+                          ),
+                        )
+
+
+                                ],
+                                ),
                               Container(
                                 margin:
                                     const EdgeInsets.only(top: 10, bottom: 20),
@@ -427,7 +467,7 @@ class _HomePageState extends State<HomePage> {
                                 alignment: Alignment.center,
                                 children: [
                                   Container(
-                                    height: 300,
+                                    height: 200,
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
