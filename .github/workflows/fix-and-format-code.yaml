@@ -18,7 +18,7 @@ jobs:
           node-version-file: package.json
           cache: npm
       - run: |
-          npm install -g npm@${jq -r .volta.npm package.json}
+          npm install -g npm@$(jq -r .volta.npm package.json)
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew analytics off
           brew tap leoafarias/fvm
