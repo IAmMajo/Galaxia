@@ -104,49 +104,58 @@ class SoonPage extends StatelessWidget {
                                       padding: const EdgeInsets.only(left: 5.0),
                                       child: Column(
                                         children: [
-                                         Container(
-                                          height: 150,
-                                          width: 200,
-                                          child: Text(soonentries[index].des,
-                                          textAlign: TextAlign.center,
-                                          ),
-                                          
+                                          SizedBox(
+                                            height: 150,
+                                            width: 200,
+                                            child: Text(
+                                              soonentries[index].des,
+                                              textAlign: TextAlign.center,
+                                            ),
                                           ),
                                           Row(
                                             children: [
                                               TextButton(
-                                            style: ButtonStyle(
-                                              backgroundColor: MaterialStateProperty.all<Color>(
-                                                Colors.black.withOpacity(0.5),
-                                              ),
-                                              overlayColor: MaterialStateProperty.all<Color>(
-                                                Colors.white.withOpacity(0.1),
-                                              ),
-                                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                  borderRadius: BorderRadius.circular(8.0),
+                                                style: ButtonStyle(
+                                                  backgroundColor:
+                                                      MaterialStateProperty.all<
+                                                          Color>(
+                                                    Colors.black
+                                                        .withOpacity(0.5),
+                                                  ),
+                                                  overlayColor:
+                                                      MaterialStateProperty.all<
+                                                          Color>(
+                                                    Colors.white
+                                                        .withOpacity(0.1),
+                                                  ),
+                                                  shape:
+                                                      MaterialStateProperty.all<
+                                                          RoundedRectangleBorder>(
+                                                    RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                                onPressed: () {},
+                                                child: const Text(
+                                                  '🔔Erinnern',
+                                                  style: TextStyle(
+                                                      color: Colors.white),
                                                 ),
                                               ),
-                                            ),
-                                            onPressed: () {},
-                                            child: const Text(
-                                              '🔔Erinnern',
-                                              style: TextStyle(color: Colors.white),
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            width: 15,
-                                          ),
-                                           Container(
-                                    height: 25,
-                                    width: 25,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                '${soonentries[index].fsk}.png')
-                                                )
-                                                ),
-                                  ),
+                                              const SizedBox(
+                                                width: 15,
+                                              ),
+                                              Container(
+                                                height: 25,
+                                                width: 25,
+                                                decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image: AssetImage(
+                                                            '${soonentries[index].fsk}.png'))),
+                                              ),
                                             ],
                                           ),
                                         ],
