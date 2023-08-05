@@ -24,6 +24,19 @@ class NeuheitenModel {
 
     neuheiten.add(
       NeuheitenModel(
+          name: 'The Witcher',
+          logo: 'assets/logos/TheWitcherLogo.png',
+          genre: 'Fantasy',
+          fsk: 'assets/FSK18',
+          des:
+              '"The Witcher" ist eine düstere Fantasy-Serie, die das Leben von Geralt von Riva, einem Monsterjäger, und den Schicksalen von Ciri und Yennefer miteinander verwebt. Action, Magie und Intrigen erwarten die Zuschauer.',
+          image: "assets/series/TheWitcher.jpg",
+          actor: 'Henry Cavil, Anya Chalotra, Freya Allen',
+          platform: "assets/NetflixLogo.webp"),
+    );
+
+    neuheiten.add(
+      NeuheitenModel(
           name: 'Stranger Things',
           logo: 'assets/logos/StrangerThingsLogo.png',
           genre: 'Horror',

@@ -17,11 +17,11 @@ class HighlightModel {
     List<HighlightModel> highlight = [];
 
     highlight.add(HighlightModel(
-        name: 'The 100',
-        logo: "assets/logos/The100Logo.webp",
-        genre: 'Dystopian',
-        image: "assets/series/The100.jpg",
-        platform: 'Prime'));
+        name: 'The Witcher',
+        logo: "assets/logos/TheWitcherLogo.png",
+        genre: 'Fantasy',
+        image: "assets/series/TheWitcher.jpg",
+        platform: 'Netflix'));
 
     highlight.add(HighlightModel(
         name: 'Game of Thrones',
