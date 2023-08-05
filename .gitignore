@@ -48,3 +48,6 @@ app.*.map.json
 
 # FVM
 flutter_sdk
+
+# wrangler
+.wrangler

@@ -21,6 +21,10 @@ jobs:
           brew install fvm
           fvm install -s
           fvm flutter build web --suppress-analytics --web-renderer=canvaskit
+      - uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: d1 migrations apply galaxia
       - uses: cloudflare/pages-action@v1.4.1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
