@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:streamflix/models/highlight_model.dart';
-import 'package:streamflix/models/soon_model.dart';
+import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/soon_model.dart';
 
 class SoonPage extends StatelessWidget {
   const SoonPage({super.key});

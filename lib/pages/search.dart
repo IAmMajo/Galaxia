@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:streamflix/models/highlight_model.dart';
-import 'package:streamflix/models/neuheiten_model.dart';
+import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/neuheiten_model.dart';
 
 class SearchPage extends StatefulWidget {
   final HighlightModel highlight;

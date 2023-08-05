@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:material_symbols_icons/outlined.dart';
 //selfmade packages
-import 'package:streamflix/models/highlight_model.dart';
-import 'package:streamflix/pages/onboarding.dart';
+import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/pages/onboarding.dart';
 //color scheme
 import 'color_schemes.g.dart';
 //list of pages of the application
@@ -38,21 +38,21 @@ Future<void> main() async {
   FirebaseAuth.instance.authStateChanges().listen((User? user) {
     bool isLoggedIn = user != null;
     print("User is ${isLoggedIn ? 'signed in' : 'not signed in'}!");
-    runApp(const StreamflixApp());
+    runApp(const GalaxiaApp());
   });
 }
 
-class StreamflixApp extends StatefulWidget {
+class GalaxiaApp extends StatefulWidget {
   static InteractiveInkFeatureFactory get splashFactory =>
       kIsWeb ? InkRipple.splashFactory : InkSparkle.splashFactory;
 
-  const StreamflixApp({Key? key}) : super(key: key);
+  const GalaxiaApp({Key? key}) : super(key: key);
 
   @override
-  _StreamflixAppState createState() => _StreamflixAppState();
+  _GalaxiaAppState createState() => _GalaxiaAppState();
 }
 
-class _StreamflixAppState extends State<StreamflixApp> {
+class _GalaxiaAppState extends State<GalaxiaApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

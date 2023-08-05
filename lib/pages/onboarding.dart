@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:streamflix/components/login.dart';
-import 'package:streamflix/models/highlight_model.dart';
+import 'package:galaxia/components/login.dart';
+import 'package:galaxia/models/highlight_model.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   final Function(bool) onLoginSuccess;

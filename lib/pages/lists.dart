@@ -1,8 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:streamflix/models/highlight_model.dart';
-import 'package:streamflix/models/listsview_model.dart';
+import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/listsview_model.dart';
 
 class ListsPage extends StatelessWidget {
   const ListsPage({super.key});

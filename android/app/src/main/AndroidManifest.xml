@@ -1,9 +1,9 @@
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
-  package="dev.maxoverlack.streamflix"
+  package="dev.maxoverlack.galaxia"
 >
    <application
-    android:label="Streamflix"
+    android:label="Galaxia"
     android:name="${applicationName}"
     android:icon="@mipmap/ic_launcher"
   >

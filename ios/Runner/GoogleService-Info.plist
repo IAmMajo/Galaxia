@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak.apps.googleusercontent.com</string>
+	<string>947538191533-h6etssl0ungv5omana1deiaam2tlcg8b.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak</string>
+	<string>com.googleusercontent.apps.947538191533-h6etssl0ungv5omana1deiaam2tlcg8b</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD2ilCwGjkRE6PCxEhNbRwr7lYMI0b51F0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>dev.maxoverlack.streamflix</string>
+	<string>dev.maxoverlack.galaxia</string>
 	<key>PROJECT_ID</key>
 	<string>flutterpmgalaxia</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:947538191533:ios:5cee8fef3a2ec2d145d224</string>
+	<string>1:947538191533:ios:d0716ccba80d0a1d45d224</string>
 </dict>
 </plist>

@@ -1,9 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:streamflix/models/highlight_model.dart';
-import 'package:streamflix/models/meineListe_model.dart';
-import 'package:streamflix/models/neuheiten_model.dart';
-import 'package:streamflix/models/tagcloud_model.dart';
+import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/meineListe_model.dart';
+import 'package:galaxia/models/neuheiten_model.dart';
+import 'package:galaxia/models/tagcloud_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

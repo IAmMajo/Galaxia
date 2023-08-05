@@ -25,6 +25,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 9839aabb4253ed85d80549a8f99ee832
-          projectName: streamflix
+          projectName: galaxia
           directory: build/web
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

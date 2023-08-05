@@ -1,5 +1,5 @@
 {
-  "name": "@iammajo/streamflix",
+  "name": "@iammajo/galaxia",
   "version": "1.0.0",
   "description": "Ein Dashboard für alle Streamingdienste.",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IAmMajo/Streamflix.git"
+    "url": "git+https://github.com/IAmMajo/Galaxia.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IAmMajo/Streamflix/issues"
+    "url": "https://github.com/IAmMajo/Galaxia/issues"
   },
-  "homepage": "https://github.com/IAmMajo/Streamflix#readme",
+  "homepage": "https://github.com/IAmMajo/Galaxia#readme",
   "volta": {
     "node": "18.16.0",
     "npm": "9.6.5"

@@ -1,6 +1,6 @@
-[![Beitragen mit Gitpod](https://img.shields.io/badge/Beitragen%20mit-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/IAmMajo/Streamflix)
+[![Beitragen mit Gitpod](https://img.shields.io/badge/Beitragen%20mit-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/IAmMajo/Galaxia)
 
-# Streamflix
+# Galaxia
 
 Ein Dashboard für alle Streamingdienste.
 

@@ -57,7 +57,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyC4OgiNm9Y2gNFKU_qaydeyZ7Ni_tRXb2Y',
-    appId: '1:947538191533:android:b4e43129d1384d1945d224',
+    appId: '1:947538191533:android:e15ddcd7a185b99045d224',
     messagingSenderId: '947538191533',
     projectId: 'flutterpmgalaxia',
     storageBucket: 'flutterpmgalaxia.appspot.com',
@@ -65,12 +65,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyD2ilCwGjkRE6PCxEhNbRwr7lYMI0b51F0',
-    appId: '1:947538191533:ios:5cee8fef3a2ec2d145d224',
+    appId: '1:947538191533:ios:d0716ccba80d0a1d45d224',
     messagingSenderId: '947538191533',
     projectId: 'flutterpmgalaxia',
     storageBucket: 'flutterpmgalaxia.appspot.com',
     iosClientId:
-        '947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak.apps.googleusercontent.com',
-    iosBundleId: 'dev.maxoverlack.streamflix',
+        '947538191533-h6etssl0ungv5omana1deiaam2tlcg8b.apps.googleusercontent.com',
+    iosBundleId: 'dev.maxoverlack.galaxia',
   );
 }

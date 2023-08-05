@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:streamflix/models/highlight_model.dart';
+import 'package:galaxia/models/highlight_model.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Signin extends StatefulWidget {
