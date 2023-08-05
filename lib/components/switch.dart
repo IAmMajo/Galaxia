@@ -9,8 +9,7 @@ class SwitchApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SwitchExample();
-
+    return const SwitchExample();
   }
 }
 
