@@ -24,9 +24,13 @@
     "npm": "9.6.5"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20230801.0",
     "@prettier/plugin-xml": "2.2.0",
     "prettier": "2.8.7",
     "prettier-plugin-java": "2.1.0",
     "wrangler": "^3.4.0"
+  },
+  "dependencies": {
+    "workers-qb": "^1.1.0"
   }
 }

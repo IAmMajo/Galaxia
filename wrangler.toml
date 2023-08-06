@@ -2,3 +2,8 @@
 binding = "DB"
 database_name = "galaxia"
 database_id = "15a10c75-067b-434b-a523-4a4b8ce12f56"
+
+[[r2_buckets]]
+binding = "CONTENT"
+bucket_name = "galaxia"
+preview_bucket_name = "galaxia"
