@@ -47,7 +47,10 @@ export const onRequestPost = [
     const id = results.id;
     const image = actor.image;
     if (image) {
-      await env.CONTENT.put(`actor/${id}.jpeg`, image);
+      await env.CONTENT.put(
+        `actor/${id}.jpeg`,
+        Uint8Array.from(image, (character) => character.charCodeAt(0))
+      );
       await db
         .update({
           tableName: "actor",
