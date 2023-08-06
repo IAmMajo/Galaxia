@@ -48,11 +48,13 @@ export const onRequestPost = [
     const image = actor.image;
     if (image) {
       await env.CONTENT.put(`actor/${id}.jpeg`, image);
-      await db.update({
-        tableName: "actor",
-        data: { image: `/actor/${id}.jpeg` },
-        where: { conditions: "id = ?1", params: [id] },
-      }).execute();
+      await db
+        .update({
+          tableName: "actor",
+          data: { image: `/actor/${id}.jpeg` },
+          where: { conditions: "id = ?1", params: [id] },
+        })
+        .execute();
     }
     return new Response(JSON.stringify(results), { status: 201 });
   }) as PagesFunction<Env, any, { json: Actor }>,
