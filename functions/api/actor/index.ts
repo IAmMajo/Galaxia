@@ -47,8 +47,8 @@ export const onRequestPost = [
     const id = results.id;
     const image = actor.image;
     if (image) {
-      env.CONTENT.put(`actor/${id}.jpeg`, image);
-      db.update({
+      await env.CONTENT.put(`actor/${id}.jpeg`, image);
+      await db.update({
         tableName: "actor",
         data: { image: `/actor/${id}.jpeg` },
         where: { conditions: "id = ?1", params: [id] },
