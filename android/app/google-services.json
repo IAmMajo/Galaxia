@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "947538191533-t3mn5rjmgmeeck92s09n1biot2e6a1u8.apps.googleusercontent.com",
+          "client_id": "947538191533-o8qsiihduga2h7plm7jgt7lk29ohpmr4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "dev.maxoverlack.galaxia",
@@ -39,10 +39,10 @@
               "client_type": 3
             },
             {
-              "client_id": "947538191533-h6etssl0ungv5omana1deiaam2tlcg8b.apps.googleusercontent.com",
+              "client_id": "947538191533-cmtdpnjlpumdr4b9l9ngu7l9bg1hupak.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "dev.maxoverlack.galaxia"
+                "bundle_id": "dev.maxoverlack.streamflix"
               }
             }
           ]
