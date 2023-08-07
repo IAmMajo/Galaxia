@@ -10,8 +10,8 @@ class MeineListeModel {
   String laenge;
   String url;
 
-  MeineListeModel({
-      required this.name,
+  MeineListeModel(
+      {required this.name,
       required this.logo,
       required this.laenge,
       required this.genre,
@@ -20,8 +20,7 @@ class MeineListeModel {
       required this.fsk,
       required this.actor,
       required this.platform,
-      required this.url
-  });
+      required this.url});
 
   static List<MeineListeModel> getmeineListe() {
     List<MeineListeModel> meineListe = [];

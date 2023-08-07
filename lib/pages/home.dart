@@ -848,8 +848,8 @@ class _HomePageState extends State<HomePage> {
                                           Colors.black.withOpacity(0.5),
                                       child: TextButton(
                                         onPressed: () async {
-                                          Uri url =
-                                              Uri.parse(disneyNeuheiten[index].url);
+                                          Uri url = Uri.parse(
+                                              disneyNeuheiten[index].url);
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(url);
                                           } else {
@@ -870,8 +870,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image:
-                                            AssetImage(disneyNeuheiten[index].logo),
+                                        image: AssetImage(
+                                            disneyNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1094,7 +1094,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(disneyNeuheiten[index].logo),
+                                    image:
+                                        AssetImage(disneyNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1187,8 +1188,8 @@ class _HomePageState extends State<HomePage> {
                                           Colors.black.withOpacity(0.5),
                                       child: TextButton(
                                         onPressed: () async {
-                                          Uri url =
-                                              Uri.parse(primeNeuheiten[index].url);
+                                          Uri url = Uri.parse(
+                                              primeNeuheiten[index].url);
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(url);
                                           } else {
@@ -1209,8 +1210,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image:
-                                            AssetImage(primeNeuheiten[index].logo),
+                                        image: AssetImage(
+                                            primeNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1433,7 +1434,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(primeNeuheiten[index].logo),
+                                    image:
+                                        AssetImage(primeNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1526,8 +1528,8 @@ class _HomePageState extends State<HomePage> {
                                           Colors.black.withOpacity(0.5),
                                       child: TextButton(
                                         onPressed: () async {
-                                          Uri url =
-                                              Uri.parse(netflixNeuheiten[index].url);
+                                          Uri url = Uri.parse(
+                                              netflixNeuheiten[index].url);
                                           if (await canLaunchUrl(url)) {
                                             await launchUrl(url);
                                           } else {
@@ -1548,8 +1550,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 250,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image:
-                                            AssetImage(netflixNeuheiten[index].logo),
+                                        image: AssetImage(
+                                            netflixNeuheiten[index].logo),
                                         fit: BoxFit.contain)),
                               ),
                               Container(
@@ -1772,7 +1774,8 @@ class _HomePageState extends State<HomePage> {
                                 width: 110,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(netflixNeuheiten[index].logo),
+                                    image: AssetImage(
+                                        netflixNeuheiten[index].logo),
                                     fit: BoxFit.contain,
                                   ),
                                 ),
@@ -1874,226 +1877,245 @@ class _HomePageState extends State<HomePage> {
                               context: context,
                               builder: (BuildContext context) {
                                 return SingleChildScrollView(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    height: 250,
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              neuheiten[widget.randomNumber].image),
-                                          fit: BoxFit.cover),
-                                    ),
-                                  ),
-                                  CircleAvatar(
-                                      radius: 26,
-                                      backgroundColor:
-                                          Colors.black.withOpacity(0.5),
-                                      child: TextButton(
-                                        onPressed: () async {
-                                          Uri url =
-                                              Uri.parse(neuheiten[widget.randomNumber].url);
-                                          if (await canLaunchUrl(url)) {
-                                            await launchUrl(url);
-                                          } else {
-                                            throw 'Could not launch $url';
-                                          }
-                                        },
-                                        child: const Text(
-                                          ' ▶',
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              color: Colors.white),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Stack(
+                                          alignment: Alignment.center,
+                                          children: [
+                                            Container(
+                                              height: 250,
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                image: DecorationImage(
+                                                    image: AssetImage(neuheiten[
+                                                            widget.randomNumber]
+                                                        .image),
+                                                    fit: BoxFit.cover),
+                                              ),
+                                            ),
+                                            CircleAvatar(
+                                                radius: 26,
+                                                backgroundColor: Colors.black
+                                                    .withOpacity(0.5),
+                                                child: TextButton(
+                                                  onPressed: () async {
+                                                    Uri url = Uri.parse(
+                                                        neuheiten[widget
+                                                                .randomNumber]
+                                                            .url);
+                                                    if (await canLaunchUrl(
+                                                        url)) {
+                                                      await launchUrl(url);
+                                                    } else {
+                                                      throw 'Could not launch $url';
+                                                    }
+                                                  },
+                                                  child: const Text(
+                                                    ' ▶',
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: Colors.white),
+                                                  ),
+                                                )),
+                                          ],
                                         ),
-                                      )),
-                                ],
-                              ),
-                              Container(
-                                height: 100,
-                                width: 250,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image:
-                                            AssetImage(neuheiten[widget.randomNumber].logo),
-                                        fit: BoxFit.contain)),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: const [
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Divider(
-                                        color: Colors.white,
-                                        thickness: 1,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'STREAMEN AUF',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Divider(
-                                        color: Colors.white,
-                                        thickness: 1,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 50,
-                                      width: 60,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                            neuheiten[widget.randomNumber].platform,
+                                        Container(
+                                          height: 100,
+                                          width: 250,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(neuheiten[
+                                                          widget.randomNumber]
+                                                      .logo),
+                                                  fit: BoxFit.contain)),
+                                        ),
+                                        Container(
+                                          child: Row(
+                                            children: const [
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Expanded(
+                                                flex: 1,
+                                                child: Divider(
+                                                  color: Colors.white,
+                                                  thickness: 1,
+                                                ),
+                                              ),
+                                              SizedBox(width: 10),
+                                              Text(
+                                                'STREAMEN AUF',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                flex: 1,
+                                                child: Divider(
+                                                  color: Colors.white,
+                                                  thickness: 1,
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          fit: BoxFit.contain,
                                         ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  TextButton(
-                                    style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                        Colors.black.withOpacity(0.5),
-                                      ),
-                                      overlayColor:
-                                          MaterialStateProperty.all<Color>(
-                                        Colors.white.withOpacity(0.1),
-                                      ),
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                        Container(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                height: 50,
+                                                width: 60,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: AssetImage(
+                                                      neuheiten[widget
+                                                              .randomNumber]
+                                                          .platform,
+                                                    ),
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Text(
-                                      '+ Merken',
-                                      style: TextStyle(color: Colors.white),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            TextButton(
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty.all<
+                                                        Color>(
+                                                  Colors.black.withOpacity(0.5),
+                                                ),
+                                                overlayColor:
+                                                    MaterialStateProperty.all<
+                                                        Color>(
+                                                  Colors.white.withOpacity(0.1),
+                                                ),
+                                                shape:
+                                                    MaterialStateProperty.all<
+                                                        RoundedRectangleBorder>(
+                                                  RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                ),
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(
+                                                '+ Merken',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                            const SizedBox(
+                                              height: 15,
+                                            ),
+                                            Container(
+                                              height: 25,
+                                              width: 25,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: AssetImage(
+                                                          '${neuheiten[widget.randomNumber].fsk}.png'))),
+                                            )
+                                          ],
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              top: 10, bottom: 20),
+                                          child: Text(
+                                            neuheiten[widget.randomNumber].des,
+                                            textAlign: TextAlign.justify,
+                                            style: const TextStyle(
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 13),
+                                          ),
+                                        ),
+                                        Container(
+                                          child: Row(children: [
+                                            const Text(
+                                              'Länge: ',
+                                              style: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 13),
+                                            ),
+                                            Text(
+                                              neuheiten[widget.randomNumber]
+                                                  .laenge,
+                                              style: const TextStyle(
+                                                  color: Colors.grey,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 13),
+                                            ),
+                                          ]),
+                                        ),
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              const Text(
+                                                'Genre: ',
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 13),
+                                              ),
+                                              Text(
+                                                neuheiten[widget.randomNumber]
+                                                    .genre,
+                                                style: const TextStyle(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 13),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              const Text(
+                                                'Besetzung: ',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 13,
+                                                    color: Colors.grey),
+                                              ),
+                                              Text(
+                                                neuheiten[widget.randomNumber]
+                                                    .actor,
+                                                style: const TextStyle(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 13),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Center(
+                                          child: ElevatedButton(
+                                            child: const Text('close'),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Container(
-                                    height: 25,
-                                    width: 25,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                '${neuheiten[widget.randomNumber].fsk}.png'))),
-                                  )
-                                ],
-                              ),
-                              Container(
-                                margin:
-                                    const EdgeInsets.only(top: 10, bottom: 20),
-                                child: Text(
-                                  neuheiten[widget.randomNumber].des,
-                                  textAlign: TextAlign.justify,
-                                  style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13),
-                                ),
-                              ),
-                              Container(
-                                child: Row(children: [
-                                  const Text(
-                                    'Länge: ',
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 13),
-                                  ),
-                                  Text(
-                                    neuheiten[widget.randomNumber].laenge,
-                                    style: const TextStyle(
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 13),
-                                  ),
-                                ]),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    const Text(
-                                      'Genre: ',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 13),
-                                    ),
-                                    Text(
-                                      neuheiten[widget.randomNumber].genre,
-                                      style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    const Text(
-                                      'Besetzung: ',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 13,
-                                          color: Colors.grey),
-                                    ),
-                                    Text(
-                                      neuheiten[widget.randomNumber].actor,
-                                      style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Center(
-                                child: ElevatedButton(
-                                  child: const Text('close'),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
+                                );
                               },
                             );
                           },
