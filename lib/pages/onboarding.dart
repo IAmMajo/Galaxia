@@ -66,7 +66,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 SizedBox(
-                  height: 700.0,
+                  height: 610.0,
                   child: PageView(
                     physics: const ClampingScrollPhysics(),
                     controller: pageController,
