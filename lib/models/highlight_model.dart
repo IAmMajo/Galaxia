@@ -17,15 +17,15 @@ class HighlightModel {
     List<HighlightModel> highlight = [];
 
     highlight.add(HighlightModel(
-        name: 'The Witcher',
-        logo: "assets/logos/TheWitcherLogo.png",
-        genre: 'Fantasy',
-        image: "assets/series/TheWitcher.jpg",
+        name: 'One Piece',
+        logo: "assets/logos/OnePieceLogo.png",
+        genre: 'Piraten | Anime',
+        image: "assets/series/OnePiece.jpg",
         platform: 'Netflix'));
 
     highlight.add(HighlightModel(
         name: 'Game of Thrones',
-        logo: "assets/logos/GameofThronesLogo.webp",
+        logo: "assets/logos/GameofThronesLogo.png",
         genre: 'Middleage | Fantasy',
         image: "assets/series/GameofThrones.jpg",
         platform: 'Sky'));
