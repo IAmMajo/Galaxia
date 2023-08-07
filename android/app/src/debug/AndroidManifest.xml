@@ -10,8 +10,8 @@
     <queries>
       <intent>
       <action android:name="android.intent.action.VIEW" />
-      <data android:scheme="https"/>
+      <data android:scheme="https" />
       </intent>
-    </quieres>
+    </queries>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

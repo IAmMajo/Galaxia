@@ -96,8 +96,7 @@ class Navigation extends StatefulWidget {
   State<Navigation> createState() => _NavigationState();
 }
 
-
-  int generateRandomNumber(int min, int max) {
+int generateRandomNumber(int min, int max) {
   Random random = Random();
   return min + random.nextInt(max - min + 1);
 }
@@ -108,20 +107,19 @@ class _NavigationState extends State<Navigation> {
   List<NeuheitenModel> neuheiten = [];
   int? randomNumber;
 
-
-
   @override
-    void getHighlightForDisplay() {
+  void getHighlightForDisplay() {
     highlight = HighlightModel.getHighlight();
     neuheiten = NeuheitenModel.getneuheiten();
   }
+
+  @override
   void initState() {
     super.initState();
     getHighlightForDisplay();
-    randomNumber = generateRandomNumber(0, neuheiten.length-1);
-     print('Zufällige Zahl: $randomNumber');
+    randomNumber = generateRandomNumber(0, neuheiten.length - 1);
+    print('Zufällige Zahl: $randomNumber');
   }
-
 
   @override
   Widget build(BuildContext context) {

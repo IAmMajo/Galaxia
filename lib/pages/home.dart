@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   final int randomNumber;
-  const HomePage({required this.randomNumber});
+  const HomePage({super.key, required this.randomNumber});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -1835,7 +1835,8 @@ class _HomePageState extends State<HomePage> {
                     width: 300,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(neuheiten[widget.randomNumber].logo),
+                          image:
+                              AssetImage(neuheiten[widget.randomNumber].logo),
                           fit: BoxFit.contain),
                     ),
                   ),

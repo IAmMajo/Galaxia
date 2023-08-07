@@ -5,7 +5,7 @@ import 'package:galaxia/models/soon_model.dart';
 
 class SoonPage extends StatelessWidget {
   final int randomNumber;
-  const SoonPage({required this.randomNumber});
+  const SoonPage({super.key, required this.randomNumber});
 
   @override
   Widget build(BuildContext context) {

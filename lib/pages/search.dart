@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 class SearchPage extends StatefulWidget {
   final int randomNumber;
 
-  const SearchPage({required this.randomNumber});
+  const SearchPage({super.key, required this.randomNumber});
 
   @override
   _SearchPageState createState() => _SearchPageState();
