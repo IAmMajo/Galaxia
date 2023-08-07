@@ -93,7 +93,17 @@ class _LoginState extends State<Login> {
               ),
             ),
           ),
-          externalSigninButtons(context)
+Center(
+  child:   Container(
+    width: 225, 
+    height: 50,
+    child: Center(
+      child: externalSigninButtons(context),
+    ),
+  ),
+),
+         
+          
         ],
       ),
     );
@@ -130,32 +140,37 @@ Future<void> _handleGoogleLogIn(BuildContext context) async {
 ButtonBar externalSigninButtons(BuildContext context) {
   return ButtonBar(
     children: [
-ElevatedButton(
-  onPressed: () => _handleGoogleLogIn(context),
-  style: ElevatedButton.styleFrom(
-    backgroundColor: Colors.white,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
+Center(
+  child:   ElevatedButton(
+    onPressed: () => _handleGoogleLogIn(context),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5.0),
+      ),
+       padding: EdgeInsets.symmetric(horizontal: 20),
+  
     ),
-     padding: EdgeInsets.symmetric(horizontal: 16), // Erhöhe den horizontalen Abstand
-
-  ),
-  child: Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      Image.asset(
-        'assets/GoogleIcon.png',
-        width: 24,
-        height: 24, 
+    child: Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/GoogleIcon.png',
+            width: 27,
+            height: 27, 
+          ),
+          SizedBox(width: 8),
+          Text(
+            "Sign-In with Google",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ],
       ),
-      SizedBox(width: 8),
-      Text(
-        "Google",
-        style: TextStyle(
-          color: Colors.black,
-        ),
-      ),
-    ],
+    ),
   ),
 )
     ],
