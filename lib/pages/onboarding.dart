@@ -320,7 +320,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                     style: TextStyle(
                                       color: Colors.grey,
                                       fontWeight: FontWeight.w400,
-                                      fontSize: 21,
+                                      fontSize: 22,
                                     ),
                                   ),
                                 ),
