@@ -311,7 +311,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           mainAxisSize: MainAxisSize.min,
                           children: const <Widget>[
                             Padding(
-                              padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                              padding: EdgeInsets.only(top: 12.0, left: 8.0, right: 8.0),
                               child: Center(
                                 child: Text(
                                   'Beginnen wir mit dem Sign-In!',
