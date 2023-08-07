@@ -304,22 +304,31 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           ],
                         ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: const <Widget>[
-                          Text(
-                            'Beginnen wir mit dem Sign-In!',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 21,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: const <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(left: 8.0, right: 8.0),
+                              child: Center(
+                                child: Text(
+                                  'Beginnen wir mit dem Sign-In!',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.grey,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 21,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                          Expanded(
-                            child: Login(),
-                          )
-                        ],
+                            Expanded(
+                              child: Login(),
+                            )
+                          ],
+                        ),
                       ),
                     ],
                   ),
