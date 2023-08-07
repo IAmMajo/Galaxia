@@ -377,7 +377,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      // Texte
                       Positioned(
                         left: 8,
                         bottom: 8,
