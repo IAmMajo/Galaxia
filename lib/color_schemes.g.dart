@@ -36,12 +36,15 @@ const lightColorScheme = ColorScheme(
 
 const darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
-  primary: Color(0xFFFFB4A4),
+  
+  primary: Color.fromARGB(255, 231, 231, 231),
   onPrimary: Color(0xFF630E00),
   primaryContainer: Color(0xFF8C1800),
   onPrimaryContainer: Color(0xFFFFDAD3),
-  secondary: Color(0xFFE7BDB4),
+
+  secondary: Color.fromARGB(255, 231, 231, 231),
   onSecondary: Color(0xFF442A24),
+  
   secondaryContainer: Color.fromARGB(130, 65, 65, 65),
   onSecondaryContainer: Color.fromARGB(255, 196, 196, 196),
   tertiary: Color(0xFFDBC48C),
@@ -60,11 +63,11 @@ const darkColorScheme = ColorScheme(
 
   //Das ist übrigens die Textfarbe, da ich die ja auch dynamisch mit einem neuen Highlight ändern
   //würde
-  onSurface: Color(0xFFEDE0DD),
+  onSurface: Color.fromARGB(255, 230, 230, 230),
 
-  surfaceVariant: Color(0xFF534340),
-  onSurfaceVariant: Color(0xFFD8C2BD),
-  outline: Color(0xFFA08C88),
+  surfaceVariant: Color.fromARGB(255, 231, 231, 231),
+  onSurfaceVariant: Color.fromARGB(255, 231, 231, 231),
+  outline: Color.fromARGB(255, 231, 231, 231),
   onInverseSurface: Color(0xFF201A19),
   inverseSurface: Color(0xFFEDE0DD),
   inversePrimary: Color(0xFFB72200),
