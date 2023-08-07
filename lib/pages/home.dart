@@ -146,13 +146,14 @@ class _HomePageState extends State<HomePage> {
                                           Colors.black.withOpacity(0.5),
                                       child: TextButton(
                                         onPressed: () async {
-                                        Uri url = Uri.parse(neuheiten[index].url);
-                                        if (await canLaunchUrl(url)) {
-                                        await launchUrl(url);
-                                         } else {
-                                        throw 'Could not launch $url';
-                                         }
-                                           },
+                                          Uri url =
+                                              Uri.parse(neuheiten[index].url);
+                                          if (await canLaunchUrl(url)) {
+                                            await launchUrl(url);
+                                          } else {
+                                            throw 'Could not launch $url';
+                                          }
+                                        },
                                         child: const Text(
                                           ' ▶',
                                           style: TextStyle(
@@ -1757,206 +1758,213 @@ class _HomePageState extends State<HomePage> {
                           ),
                           onPressed: () {
                             showModalBottomSheet<dynamic>(
-                    backgroundColor: Colors.black.withOpacity(0.8),
-                    isScrollControlled: true,
-                    context: context,
-                    builder: (BuildContext context) {
-                      return SingleChildScrollView(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  Container(
-                                    height: 250,
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      image: DecorationImage(
-                                          image: AssetImage(
-                                              highlight[0].image),
-                                          fit: BoxFit.cover),
-                                    ),
-                                  ),
-                                  CircleAvatar(
-                                      radius: 26,
-                                      backgroundColor:
-                                          Colors.black.withOpacity(0.5),
-                                      child: TextButton(
-                                        onPressed: () {
-
-                                        },
-                                        child: const Text(
-                                          ' ▶',
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              color: Colors.white),
+                              backgroundColor: Colors.black.withOpacity(0.8),
+                              isScrollControlled: true,
+                              context: context,
+                              builder: (BuildContext context) {
+                                return SingleChildScrollView(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Stack(
+                                          alignment: Alignment.center,
+                                          children: [
+                                            Container(
+                                              height: 250,
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        highlight[0].image),
+                                                    fit: BoxFit.cover),
+                                              ),
+                                            ),
+                                            CircleAvatar(
+                                                radius: 26,
+                                                backgroundColor: Colors.black
+                                                    .withOpacity(0.5),
+                                                child: TextButton(
+                                                  onPressed: () {},
+                                                  child: const Text(
+                                                    ' ▶',
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        color: Colors.white),
+                                                  ),
+                                                )),
+                                          ],
                                         ),
-                                      )),
-                                ],
-                              ),
-                              Container(
-                                height: 100,
-                                width: 250,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image:
-                                            AssetImage(highlight[0].logo),
-                                        fit: BoxFit.contain)),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: const [
-                                    SizedBox(
-                                      width: 10,
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Divider(
-                                        color: Colors.white,
-                                        thickness: 1,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Text(
-                                      'STREAMEN AUF',
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Divider(
-                                        color: Colors.white,
-                                        thickness: 1,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      height: 50,
-                                      width: 60,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                            highlight[0].platform,
+                                        Container(
+                                          height: 100,
+                                          width: 250,
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      highlight[0].logo),
+                                                  fit: BoxFit.contain)),
+                                        ),
+                                        Container(
+                                          child: Row(
+                                            children: const [
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Expanded(
+                                                flex: 1,
+                                                child: Divider(
+                                                  color: Colors.white,
+                                                  thickness: 1,
+                                                ),
+                                              ),
+                                              SizedBox(width: 10),
+                                              Text(
+                                                'STREAMEN AUF',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                              SizedBox(width: 10),
+                                              Expanded(
+                                                flex: 1,
+                                                child: Divider(
+                                                  color: Colors.white,
+                                                  thickness: 1,
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          fit: BoxFit.contain,
                                         ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  TextButton(
-                                    style: ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStateProperty.all<Color>(
-                                        Colors.black.withOpacity(0.5),
-                                      ),
-                                      overlayColor:
-                                          MaterialStateProperty.all<Color>(
-                                        Colors.white.withOpacity(0.1),
-                                      ),
-                                      shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
+                                        Container(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                height: 50,
+                                                width: 60,
+                                                decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                    image: AssetImage(
+                                                      highlight[0].platform,
+                                                    ),
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                    onPressed: () {},
-                                    child: const Text(
-                                      '+ Merken',
-                                      style: TextStyle(color: Colors.white),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            TextButton(
+                                              style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty.all<
+                                                        Color>(
+                                                  Colors.black.withOpacity(0.5),
+                                                ),
+                                                overlayColor:
+                                                    MaterialStateProperty.all<
+                                                        Color>(
+                                                  Colors.white.withOpacity(0.1),
+                                                ),
+                                                shape:
+                                                    MaterialStateProperty.all<
+                                                        RoundedRectangleBorder>(
+                                                  RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                ),
+                                              ),
+                                              onPressed: () {},
+                                              child: const Text(
+                                                '+ Merken',
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                            ),
+                                            Container(
+                                              height: 25,
+                                              width: 25,
+                                              decoration: BoxDecoration(
+                                                  image: DecorationImage(
+                                                      image: AssetImage(
+                                                          '${highlight[0].fsk}.png'))),
+                                            )
+                                          ],
+                                        ),
+                                        Container(
+                                          margin: const EdgeInsets.only(
+                                              top: 10, bottom: 20),
+                                          child: Text(
+                                            highlight[0].des,
+                                            textAlign: TextAlign.justify,
+                                            style: const TextStyle(
+                                                color: Colors.grey,
+                                                fontWeight: FontWeight.w400,
+                                                fontSize: 13),
+                                          ),
+                                        ),
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              const Text(
+                                                'Genre: ',
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 13),
+                                              ),
+                                              Text(
+                                                highlight[0].genre,
+                                                style: const TextStyle(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 13),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              const Text(
+                                                'Besetzung: ',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontSize: 13,
+                                                    color: Colors.grey),
+                                              ),
+                                              Text(
+                                                highlight[0].actor,
+                                                style: const TextStyle(
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 13),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Center(
+                                          child: ElevatedButton(
+                                            child: const Text('close'),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                  Container(
-                                    height: 25,
-                                    width: 25,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                '${highlight[0].fsk}.png'))),
-                                  )
-                                ],
-                              ),
-                              Container(
-                                margin:
-                                    const EdgeInsets.only(top: 10, bottom: 20),
-                                child: Text(
-                                  highlight[0].des,
-                                  textAlign: TextAlign.justify,
-                                  style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontWeight: FontWeight.w400,
-                                      fontSize: 13),
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    const Text(
-                                      'Genre: ',
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 13),
-                                    ),
-                                    Text(
-                                      highlight[0].genre,
-                                      style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                child: Row(
-                                  children: [
-                                    const Text(
-                                      'Besetzung: ',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 13,
-                                          color: Colors.grey),
-                                    ),
-                                    Text(
-                                      highlight[0].actor,
-                                      style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 13),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Center(
-                                child: ElevatedButton(
-                                  child: const Text('close'),
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  );
+                                );
+                              },
+                            );
                           },
                           child: const Text(
                             '▶ Streamen',
