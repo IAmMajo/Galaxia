@@ -5,7 +5,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 	<string>https</string>
-	<array/>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
