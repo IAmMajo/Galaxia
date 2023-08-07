@@ -160,7 +160,7 @@ ButtonBar externalSigninButtons(BuildContext context) {
                 ),
                 const SizedBox(width: 8),
                 const Text(
-                  "Sign-In with Google",
+                  "Log-In with Google",
                   style: TextStyle(
                     color: Colors.black,
                   ),

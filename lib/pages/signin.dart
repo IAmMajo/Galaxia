@@ -128,7 +128,15 @@ class _SigninState extends State<Signin> {
                 ),
               ),
             ),
-            externalSigninButtons(context),
+           Center(
+            child: SizedBox(
+              width: 225,
+              height: 50,
+              child: Center(
+                child: externalSigninButtons(context),
+              ),
+            ),
+          ),
           ],
         ),
       ),
@@ -166,9 +174,38 @@ Future<void> _handleGoogleSignIn(BuildContext context) async {
 ButtonBar externalSigninButtons(BuildContext context) {
   return ButtonBar(
     children: [
-      ElevatedButton(
+      Center(
+        child: ElevatedButton(
           onPressed: () => _handleGoogleSignIn(context),
-          child: const Text("Google"))
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+          ),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/GoogleIcon.png',
+                  width: 27,
+                  height: 27,
+                ),
+                const SizedBox(width: 8),
+                const Text(
+                  "Sign-In with Google",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      )
     ],
   );
 }
