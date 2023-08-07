@@ -17,10 +17,10 @@ class HighlightModel {
     List<HighlightModel> highlight = [];
 
     highlight.add(HighlightModel(
-        name: 'One Piece',
-        logo: "assets/logos/OnePieceLogo.png",
-        genre: 'Piraten | Anime',
-        image: "assets/series/OnePiece.jpg",
+        name: 'Supergirl',
+        logo: "assets/logos/SupergirlLogo.webp",
+        genre: 'DC Comics',
+        image: "assets/series/Supergirl.webp",
         platform: 'Netflix'));
 
     highlight.add(HighlightModel(
