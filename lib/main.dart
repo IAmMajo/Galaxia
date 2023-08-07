@@ -77,11 +77,6 @@ class _GalaxiaAppState extends State<GalaxiaApp> {
         colorScheme: darkColorScheme,
         useMaterial3: true,
         fontFamily: 'Roboto',
-      ),
-      darkTheme: ThemeData(
-        colorScheme: darkColorScheme,
-        useMaterial3: true,
-        fontFamily: 'Roboto',
         iconTheme: const IconThemeData(grade: -25),
       ),
     );
