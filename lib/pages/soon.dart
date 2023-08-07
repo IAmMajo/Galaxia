@@ -106,57 +106,60 @@ class SoonPage extends StatelessWidget {
                                         children: [
                                           SizedBox(
                                             height: 150,
-                                            width: 200,
+                                            width: 170,
                                             child: Text(
                                               soonentries[index].des,
-                                              textAlign: TextAlign.center,
+                                              textAlign: TextAlign.start,
                                             ),
                                           ),
-                                          Row(
-                                            children: [
-                                              TextButton(
-                                                style: ButtonStyle(
-                                                  backgroundColor:
-                                                      MaterialStateProperty.all<
-                                                          Color>(
-                                                    Colors.black
-                                                        .withOpacity(0.5),
-                                                  ),
-                                                  overlayColor:
-                                                      MaterialStateProperty.all<
-                                                          Color>(
-                                                    Colors.white
-                                                        .withOpacity(0.1),
-                                                  ),
-                                                  shape:
-                                                      MaterialStateProperty.all<
-                                                          RoundedRectangleBorder>(
-                                                    RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
+                                          Container(
+                                            width: 170,
+                                            child: Row(
+                                              children: [
+                                                TextButton(
+                                                  style: ButtonStyle(
+                                                    backgroundColor:
+                                                        MaterialStateProperty.all<
+                                                            Color>(
+                                                      Colors.black
+                                                          .withOpacity(0.5),
+                                                    ),
+                                                    overlayColor:
+                                                        MaterialStateProperty.all<
+                                                            Color>(
+                                                      Colors.white
+                                                          .withOpacity(0.1),
+                                                    ),
+                                                    shape:
+                                                        MaterialStateProperty.all<
+                                                            RoundedRectangleBorder>(
+                                                      RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                                8.0),
+                                                      ),
                                                     ),
                                                   ),
+                                                  onPressed: () {},
+                                                  child: const Text(
+                                                    '🔔Erinnern',
+                                                    style: TextStyle(
+                                                        color: Colors.white),
+                                                  ),
                                                 ),
-                                                onPressed: () {},
-                                                child: const Text(
-                                                  '🔔Erinnern',
-                                                  style: TextStyle(
-                                                      color: Colors.white),
+                                                const SizedBox(
+                                                  width: 15,
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                width: 15,
-                                              ),
-                                              Container(
-                                                height: 25,
-                                                width: 25,
-                                                decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: AssetImage(
-                                                            '${soonentries[index].fsk}.png'))),
-                                              ),
-                                            ],
+                                                Container(
+                                                  height: 25,
+                                                  width: 25,
+                                                  decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                          image: AssetImage(
+                                                              '${soonentries[index].fsk}.png'))),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ],
                                       ),
