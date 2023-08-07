@@ -128,15 +128,15 @@ class _SigninState extends State<Signin> {
                 ),
               ),
             ),
-           Center(
-            child: SizedBox(
-              width: 225,
-              height: 50,
-              child: Center(
-                child: externalSigninButtons(context),
+            Center(
+              child: SizedBox(
+                width: 225,
+                height: 50,
+                child: Center(
+                  child: externalSigninButtons(context),
+                ),
               ),
             ),
-          ),
           ],
         ),
       ),
