@@ -7,7 +7,7 @@ import 'package:galaxia/models/neuheiten_model.dart';
 class SearchPage extends StatefulWidget {
   final int randomNumber;
 
-  const SearchPage({required this.randomNumber});
+  const SearchPage({super.key, required this.randomNumber});
 
   @override
   _SearchPageState createState() => _SearchPageState();

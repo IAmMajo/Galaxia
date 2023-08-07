@@ -6,7 +6,7 @@ import 'package:galaxia/components/switch.dart';
 
 class SettingsPage extends StatelessWidget {
   final int randomNumber;
-  const SettingsPage({required this.randomNumber});
+  const SettingsPage({super.key, required this.randomNumber});
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import 'package:galaxia/models/listsview_model.dart';
 
 class ListsPage extends StatelessWidget {
   final int randomNumber;
-  const ListsPage({required this.randomNumber});
+  const ListsPage({super.key, required this.randomNumber});
 
   @override
   Widget build(BuildContext context) {

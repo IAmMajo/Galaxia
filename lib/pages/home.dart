@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   final int randomNumber;
-  const HomePage({required this.randomNumber});
+  const HomePage({super.key, required this.randomNumber});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -1726,7 +1726,8 @@ class _HomePageState extends State<HomePage> {
                     width: 300,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(neuheiten[widget.randomNumber].logo),
+                          image:
+                              AssetImage(neuheiten[widget.randomNumber].logo),
                           fit: BoxFit.contain),
                     ),
                   ),
@@ -1778,8 +1779,9 @@ class _HomePageState extends State<HomePage> {
                                                 borderRadius:
                                                     BorderRadius.circular(10),
                                                 image: DecorationImage(
-                                                    image: AssetImage(
-                                                        neuheiten[widget.randomNumber].image),
+                                                    image: AssetImage(neuheiten[
+                                                            widget.randomNumber]
+                                                        .image),
                                                     fit: BoxFit.cover),
                                               ),
                                             ),
@@ -1803,8 +1805,9 @@ class _HomePageState extends State<HomePage> {
                                           width: 250,
                                           decoration: BoxDecoration(
                                               image: DecorationImage(
-                                                  image: AssetImage(
-                                                      neuheiten[widget.randomNumber].logo),
+                                                  image: AssetImage(neuheiten[
+                                                          widget.randomNumber]
+                                                      .logo),
                                                   fit: BoxFit.contain)),
                                         ),
                                         Container(
@@ -1848,7 +1851,9 @@ class _HomePageState extends State<HomePage> {
                                                 decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
-                                                      neuheiten[widget.randomNumber].platform,
+                                                      neuheiten[widget
+                                                              .randomNumber]
+                                                          .platform,
                                                     ),
                                                     fit: BoxFit.contain,
                                                   ),
@@ -1923,7 +1928,8 @@ class _HomePageState extends State<HomePage> {
                                                     fontSize: 13),
                                               ),
                                               Text(
-                                                neuheiten[widget.randomNumber].genre,
+                                                neuheiten[widget.randomNumber]
+                                                    .genre,
                                                 style: const TextStyle(
                                                     color: Colors.grey,
                                                     fontWeight: FontWeight.w400,
@@ -1943,7 +1949,8 @@ class _HomePageState extends State<HomePage> {
                                                     color: Colors.grey),
                                               ),
                                               Text(
-                                               neuheiten[widget.randomNumber].actor,
+                                                neuheiten[widget.randomNumber]
+                                                    .actor,
                                                 style: const TextStyle(
                                                     color: Colors.grey,
                                                     fontWeight: FontWeight.w400,
