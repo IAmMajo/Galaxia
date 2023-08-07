@@ -130,9 +130,34 @@ Future<void> _handleGoogleLogIn(BuildContext context) async {
 ButtonBar externalSigninButtons(BuildContext context) {
   return ButtonBar(
     children: [
-      ElevatedButton(
-          onPressed: () => _handleGoogleLogIn(context),
-          child: const Text("Google"))
+ElevatedButton(
+  onPressed: () => _handleGoogleLogIn(context),
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.white,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8.0),
+    ),
+     padding: EdgeInsets.symmetric(horizontal: 16), // Erhöhe den horizontalen Abstand
+
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Image.asset(
+        'assets/GoogleIcon.png',
+        width: 24,
+        height: 24, 
+      ),
+      SizedBox(width: 8),
+      Text(
+        "Google",
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
+    ],
+  ),
+)
     ],
   );
 }
