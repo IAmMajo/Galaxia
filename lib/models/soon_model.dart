@@ -31,7 +31,7 @@ class SoonEntriesModel {
           logo: 'assets/logos/OnePieceLogo.png',
           image: 'assets/OnePieceReal.webp',
           fsk: 'assets/FSK12',
-          platform: 'Netflix'),
+          platform: 'assets/NetflixLogo.webp'),
     );
 
     soonentries.add(
@@ -44,7 +44,7 @@ class SoonEntriesModel {
           logo: 'assets/logos/GhostbustersLegacyLogo.png',
           image: 'assets/GhostbustersLegacy.webp',
           fsk: 'assets/FSK12',
-          platform: 'Netflix'),
+          platform: 'assets/NetflixLogo.webp'),
     );
 
     soonentries.add(
@@ -57,7 +57,7 @@ class SoonEntriesModel {
           logo: 'assets/logos/GargoyelesLogo.png',
           image: 'assets/Gargoyels.webp',
           fsk: 'assets/FSK12',
-          platform: 'Disney'),
+          platform: 'assets/DisneyLogo.png'),
     );
 
     soonentries.add(SoonEntriesModel(
@@ -69,7 +69,7 @@ class SoonEntriesModel {
         logo: 'assets/logos/TheImperfectsLogo.png',
         image: 'assets/TheImperfects.webp',
         fsk: 'assets/FSK16',
-        platform: 'Netflix'));
+        platform: 'assets/NetflixLogo.webp'));
 
     return soonentries;
   }
