@@ -4,6 +4,9 @@ import 'package:galaxia/models/highlight_model.dart';
 import 'package:galaxia/models/meineListe_model.dart';
 import 'package:galaxia/models/neuheiten_model.dart';
 import 'package:galaxia/models/tagcloud_model.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -144,7 +147,15 @@ class _HomePageState extends State<HomePage> {
                                       backgroundColor:
                                           Colors.black.withOpacity(0.5),
                                       child: TextButton(
-                                        onPressed: () {},
+                                        onPressed: () async {
+                                        
+                                        String url = neuheiten[index].url;
+                                        if (await canLaunch(url)) {
+                                        await launch(url);
+                                         } else {
+                                        throw 'Could not launch $url';
+                                         }
+                                           },
                                         child: const Text(
                                           ' ▶',
                                           style: TextStyle(
@@ -214,6 +225,7 @@ class _HomePageState extends State<HomePage> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
+                                  
                                   TextButton(
                                     style: ButtonStyle(
                                       backgroundColor:
@@ -238,6 +250,7 @@ class _HomePageState extends State<HomePage> {
                                       style: TextStyle(color: Colors.white),
                                     ),
                                   ),
+                                  SizedBox(height: 15,),
                                   Container(
                                     height: 25,
                                     width: 25,
@@ -258,6 +271,29 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.grey,
                                       fontWeight: FontWeight.w400,
                                       fontSize: 13),
+                                ),
+                              ),
+                               Container(
+                                child: Row(
+                                  children: 
+                                  [
+                                    const Text(
+                                      'Länge: ',
+                                      style: TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13
+                                      ),
+                                      ),
+                                      Text(
+                                      neuheiten[index].laenge,
+                                      style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 13),
+                                    ),
+
+                                  ]
                                 ),
                               ),
                               Container(
@@ -300,6 +336,7 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
+                             
                               Center(
                                 child: ElevatedButton(
                                   child: const Text('close'),
