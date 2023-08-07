@@ -112,31 +112,31 @@ class SoonPage extends StatelessWidget {
                                               textAlign: TextAlign.start,
                                             ),
                                           ),
-                                          Container(
+                                          SizedBox(
                                             width: 170,
                                             child: Row(
                                               children: [
                                                 TextButton(
                                                   style: ButtonStyle(
                                                     backgroundColor:
-                                                        MaterialStateProperty.all<
-                                                            Color>(
+                                                        MaterialStateProperty
+                                                            .all<Color>(
                                                       Colors.black
                                                           .withOpacity(0.5),
                                                     ),
                                                     overlayColor:
-                                                        MaterialStateProperty.all<
-                                                            Color>(
+                                                        MaterialStateProperty
+                                                            .all<Color>(
                                                       Colors.white
                                                           .withOpacity(0.1),
                                                     ),
-                                                    shape:
-                                                        MaterialStateProperty.all<
+                                                    shape: MaterialStateProperty
+                                                        .all<
                                                             RoundedRectangleBorder>(
                                                       RoundedRectangleBorder(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                8.0),
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
                                                     ),
                                                   ),
