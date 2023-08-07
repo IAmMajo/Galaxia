@@ -123,10 +123,6 @@ Future<void> _handleGoogleLogIn(BuildContext context) async {
       idToken: googleAuth.idToken,
     );
     FirebaseAuth.instance.signInWithCredential(credential);
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-          content: Text("Logged in as:${FirebaseAuth.instance.currentUser}")),
-    );
   } catch (error) {
     print(error);
     ScaffoldMessenger.of(context).showSnackBar(
