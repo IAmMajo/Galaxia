@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:material_symbols_icons/outlined.dart';
 //selfmade packages
 import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/neuheiten_model.dart';
 import 'package:galaxia/pages/onboarding.dart';
 //color scheme
 import 'color_schemes.g.dart';
@@ -18,6 +19,7 @@ import 'pages/soon.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:math';
 
 Future<void> main() async {
   // Firebase initialization
@@ -94,19 +96,32 @@ class Navigation extends StatefulWidget {
   State<Navigation> createState() => _NavigationState();
 }
 
+
+  int generateRandomNumber(int min, int max) {
+  Random random = Random();
+  return min + random.nextInt(max - min + 1);
+}
+
 class _NavigationState extends State<Navigation> {
   int currentPageIndex = 2;
   List<HighlightModel> highlight = [];
+  List<NeuheitenModel> neuheiten = [];
+  int? randomNumber;
+
+
 
   @override
+    void getHighlightForDisplay() {
+    highlight = HighlightModel.getHighlight();
+    neuheiten = NeuheitenModel.getneuheiten();
+  }
   void initState() {
     super.initState();
     getHighlightForDisplay();
+    randomNumber = generateRandomNumber(0, neuheiten.length-1);
+     print('Zufällige Zahl: $randomNumber');
   }
 
-  void getHighlightForDisplay() {
-    highlight = HighlightModel.getHighlight();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -150,11 +165,11 @@ class _NavigationState extends State<Navigation> {
           child: Container(
             color: Colors.black.withOpacity(0.7),
             child: <Widget>[
-              SearchPage(highlight: highlight[0]),
-              const SoonPage(),
-              const HomePage(),
-              const ListsPage(),
-              const SettingsPage(),
+              SearchPage(randomNumber: randomNumber!),
+              SoonPage(randomNumber: randomNumber!),
+              HomePage(randomNumber: randomNumber!),
+              ListsPage(randomNumber: randomNumber!),
+              SettingsPage(randomNumber: randomNumber!),
             ][currentPageIndex],
           ),
         ),

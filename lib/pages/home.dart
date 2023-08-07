@@ -7,7 +7,8 @@ import 'package:galaxia/models/tagcloud_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final int randomNumber;
+  const HomePage({required this.randomNumber});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage(highlight[0].image),
+          image: AssetImage(neuheiten[widget.randomNumber].image),
           fit: BoxFit.cover,
         )),
         child: BackdropFilter(
@@ -1695,7 +1696,7 @@ class _HomePageState extends State<HomePage> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               image: DecorationImage(
-                image: AssetImage(highlight[0].image),
+                image: AssetImage(neuheiten[widget.randomNumber].image),
                 fit: BoxFit.cover,
               ),
             ),
@@ -1725,12 +1726,12 @@ class _HomePageState extends State<HomePage> {
                     width: 300,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage(highlight[0].logo),
+                          image: AssetImage(neuheiten[widget.randomNumber].logo),
                           fit: BoxFit.contain),
                     ),
                   ),
                   Text(
-                    highlight[0].genre,
+                    neuheiten[widget.randomNumber].genre,
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 13,
@@ -1778,7 +1779,7 @@ class _HomePageState extends State<HomePage> {
                                                     BorderRadius.circular(10),
                                                 image: DecorationImage(
                                                     image: AssetImage(
-                                                        highlight[0].image),
+                                                        neuheiten[widget.randomNumber].image),
                                                     fit: BoxFit.cover),
                                               ),
                                             ),
@@ -1803,7 +1804,7 @@ class _HomePageState extends State<HomePage> {
                                           decoration: BoxDecoration(
                                               image: DecorationImage(
                                                   image: AssetImage(
-                                                      highlight[0].logo),
+                                                      neuheiten[widget.randomNumber].logo),
                                                   fit: BoxFit.contain)),
                                         ),
                                         Container(
@@ -1847,7 +1848,7 @@ class _HomePageState extends State<HomePage> {
                                                 decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                     image: AssetImage(
-                                                      highlight[0].platform,
+                                                      neuheiten[widget.randomNumber].platform,
                                                     ),
                                                     fit: BoxFit.contain,
                                                   ),
@@ -1895,7 +1896,7 @@ class _HomePageState extends State<HomePage> {
                                               decoration: BoxDecoration(
                                                   image: DecorationImage(
                                                       image: AssetImage(
-                                                          '${highlight[0].fsk}.png'))),
+                                                          '${neuheiten[widget.randomNumber].fsk}.png'))),
                                             )
                                           ],
                                         ),
@@ -1903,7 +1904,7 @@ class _HomePageState extends State<HomePage> {
                                           margin: const EdgeInsets.only(
                                               top: 10, bottom: 20),
                                           child: Text(
-                                            highlight[0].des,
+                                            neuheiten[widget.randomNumber].des,
                                             textAlign: TextAlign.justify,
                                             style: const TextStyle(
                                                 color: Colors.grey,
@@ -1922,7 +1923,7 @@ class _HomePageState extends State<HomePage> {
                                                     fontSize: 13),
                                               ),
                                               Text(
-                                                highlight[0].genre,
+                                                neuheiten[widget.randomNumber].genre,
                                                 style: const TextStyle(
                                                     color: Colors.grey,
                                                     fontWeight: FontWeight.w400,
@@ -1942,7 +1943,7 @@ class _HomePageState extends State<HomePage> {
                                                     color: Colors.grey),
                                               ),
                                               Text(
-                                                highlight[0].actor,
+                                               neuheiten[widget.randomNumber].actor,
                                                 style: const TextStyle(
                                                     color: Colors.grey,
                                                     fontWeight: FontWeight.w400,

@@ -1,20 +1,21 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/neuheiten_model.dart';
 import 'package:galaxia/models/listsview_model.dart';
 
 class ListsPage extends StatelessWidget {
-  const ListsPage({super.key});
+  final int randomNumber;
+  const ListsPage({required this.randomNumber});
 
   @override
   Widget build(BuildContext context) {
-    List<HighlightModel> highlight = [];
+    List<NeuheitenModel> neuheiten = [];
     List<ListModel> lists = [];
 
     void getHighlight() {
-      highlight = HighlightModel.getHighlight();
       lists = ListModel.getlists();
+      neuheiten = NeuheitenModel.getneuheiten();
     }
 
     getHighlight();
@@ -22,7 +23,7 @@ class ListsPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage(highlight[0].image),
+          image: AssetImage(neuheiten[randomNumber].image),
           fit: BoxFit.cover,
         )),
         child: BackdropFilter(

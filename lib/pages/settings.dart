@@ -1,18 +1,19 @@
 import 'dart:ui';
-import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/neuheiten_model.dart';
 import 'package:flutter/material.dart';
 import 'package:galaxia/components/logout.dart';
 import 'package:galaxia/components/switch.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
+  final int randomNumber;
+  const SettingsPage({required this.randomNumber});
 
   @override
   Widget build(BuildContext context) {
-    List<HighlightModel> highlight = [];
+    List<NeuheitenModel> neuheiten = [];
 
     void getHighlight() {
-      highlight = HighlightModel.getHighlight();
+      neuheiten = NeuheitenModel.getneuheiten();
     }
 
     getHighlight();
@@ -20,7 +21,7 @@ class SettingsPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage(highlight[0].image),
+          image: AssetImage(neuheiten[randomNumber].image),
           fit: BoxFit.cover,
         )),
         child: BackdropFilter(

@@ -1,18 +1,19 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:galaxia/models/highlight_model.dart';
+import 'package:galaxia/models/neuheiten_model.dart';
 import 'package:galaxia/models/soon_model.dart';
 
 class SoonPage extends StatelessWidget {
-  const SoonPage({super.key});
+  final int randomNumber;
+  const SoonPage({required this.randomNumber});
 
   @override
   Widget build(BuildContext context) {
-    List<HighlightModel> highlight = [];
+    List<NeuheitenModel> neuheiten = [];
     List<SoonEntriesModel> soonentries = [];
 
     void getHighlight() {
-      highlight = HighlightModel.getHighlight();
+      neuheiten = NeuheitenModel.getneuheiten();
       soonentries = SoonEntriesModel.getSoonEntries();
     }
 
@@ -21,7 +22,7 @@ class SoonPage extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(highlight[0].image),
+            image: AssetImage(neuheiten[randomNumber].image),
             fit: BoxFit.cover,
           ),
         ),

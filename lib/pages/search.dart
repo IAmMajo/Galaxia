@@ -2,20 +2,18 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:galaxia/models/highlight_model.dart';
 import 'package:galaxia/models/neuheiten_model.dart';
 
 class SearchPage extends StatefulWidget {
-  final HighlightModel highlight;
+  final int randomNumber;
 
-  const SearchPage({Key? key, required this.highlight}) : super(key: key);
+  const SearchPage({required this.randomNumber});
 
   @override
   _SearchPageState createState() => _SearchPageState();
 }
 
 class _SearchPageState extends State<SearchPage> {
-  List<HighlightModel> highlight = [];
   List<NeuheitenModel> neuheiten = [];
   List<NeuheitenModel> searchResults = [];
 
@@ -26,18 +24,15 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void getHighlight() {
-    highlight = HighlightModel.getHighlight();
     neuheiten = NeuheitenModel.getneuheiten();
   }
 
   @override
   Widget build(BuildContext context) {
-    List<HighlightModel> highlight = [];
     List<NeuheitenModel> neuheiten = [];
     List<NeuheitenModel> searchResults = [];
 
     void getHighlight() {
-      highlight = HighlightModel.getHighlight();
       neuheiten = NeuheitenModel.getneuheiten();
     }
 
@@ -46,7 +41,7 @@ class _SearchPageState extends State<SearchPage> {
         body: Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage(highlight[0].image),
+        image: AssetImage(neuheiten[widget.randomNumber].image),
         fit: BoxFit.cover,
       )),
       child: BackdropFilter(
